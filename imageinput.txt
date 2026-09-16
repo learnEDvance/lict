@@ -1,0 +1,1 @@
+test info compressibility with image input to models.
