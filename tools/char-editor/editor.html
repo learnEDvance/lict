@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>char editor</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    font-family: system-ui, sans-serif; background: #f3f4f6; color: #1f2937;
+    display: flex; gap: 16px; padding: 16px; align-items: flex-start;
+  }
+  #stage { position: relative; flex: none; }
+  canvas {
+    background: #fff; border: 1px solid #d1d5db; border-radius: 8px;
+    cursor: crosshair; box-shadow: 0 2px 8px rgba(0,0,0,.10);
+    touch-action: none;
+  }
+  .overlay {
+    position: absolute; left: 10px; top: 10px; font-size: 12px; color: #6b7280;
+    background: rgba(255,255,255,.85); padding: 4px 8px; border-radius: 6px;
+    border: 1px solid #e5e7eb; pointer-events: none; font-variant-numeric: tabular-nums;
+  }
+  .panel {
+    width: 300px; flex: none; background: #fff; border: 1px solid #e5e7eb;
+    border-radius: 10px; padding: 14px; box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    max-height: calc(100vh - 32px); overflow-y: auto;
+  }
+  .panel h3 { margin: 0 0 8px; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: #9ca3af; }
+  .section + .section { margin-top: 14px; }
+  .row { display: flex; gap: 6px; align-items: center; }
+  .row > * { flex: 1; min-width: 0; }
+  input[type=text] {
+    width: 100%; padding: 7px 9px; border: 1px solid #d1d5db; border-radius: 6px;
+    font-size: 14px; font-family: ui-monospace, monospace; background: #fff; color: #1f2937;
+  }
+  input[type=text]:focus { outline: 2px solid #2563eb; outline-offset: 0; border-color: transparent; }
+  button {
+    padding: 7px 10px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff;
+    color: #1f2937; font-size: 13px; cursor: pointer; white-space: nowrap;
+  }
+  button:hover { background: #f9fafb; }
+  button:active { background: #e5e7eb; }
+  button.primary { background: #2563eb; border-color: #2563eb; color: #fff; }
+  button.primary:hover { background: #1d4ed8; }
+  button.toggled { background: #fbbf24; border-color: #f59e0b; color: #111827; }
+  button.char-btn {
+    width: 34px; height: 34px; padding: 0; font-family: inherit; flex: none;
+  }
+  button.char-btn.active { outline: 2px solid #2563eb; background: #dbeafe; }
+  .char-grid { display: grid; grid-template-columns: repeat(8, 34px); gap: 4px; }
+  .char-grid-wrap { max-height: 190px; overflow-y: auto; border: 1px solid #f3f4f6; border-radius: 6px; padding: 6px; }
+  #preview { display: block; width: 150px; height: 150px; border: 1px dashed #d1d5db; border-radius: 8px; background: #fff; }
+  #status { font-size: 12px; color: #374151; min-height: 16px; margin-top: 6px; }
+  #status.ok { color: #15803d; }
+  #status.bad { color: #b91c1c; }
+  #savedList { max-height: 150px; overflow-y: auto; display: flex; flex-direction: column; gap: 2px; }
+  #savedList button { text-align: left; font-family: ui-monospace, monospace; font-size: 12px; }
+  .meta { font-size: 12px; color: #6b7280; margin-top: 6px; font-variant-numeric: tabular-nums; }
+  .hint { font-size: 11px; color: #9ca3af; line-height: 1.5; }
+  kbd { background: #f3f4f6; border: 1px solid #d1d5db; border-bottom-width: 2px; border-radius: 4px; padding: 0 4px; font-family: monospace; font-size: 10px; }
+</style>
+</head>
+<body>
+
+<div id="stage">
+  <canvas id="board"></canvas>
+  <div class="overlay" id="overlay"></div>
+</div>
+
+<div class="panel">
+  <div class="section">
+    <h3>character</h3>
+    <div class="row">
+      <input type="text" id="charInput" maxlength="1" autocomplete="off" spellcheck="false" title="type a printable ascii char">
+      <button id="prevBtn" title="previous char">&larr;</button>
+      <button id="nextBtn" title="next char">&rarr;</button>
+    </div>
+    <div class="meta" id="charMeta"></div>
+    <div class="char-grid-wrap"><div class="char-grid" id="charGrid"></div></div>
+  </div>
+
+  <div class="section">
+    <h3>file</h3>
+    <div class="row">
+      <input type="text" id="fileInput" autocomplete="off" spellcheck="false" title="svg filename (no extension)">
+      <button id="saveBtn" class="primary">save&nbsp;<kbd>s</kbd></button>
+    </div>
+    <div id="status"></div>
+  </div>
+
+  <div class="section">
+    <h3>tools</h3>
+    <div class="row">
+      <button id="clearBtn">clear&nbsp;<kbd>d</kbd></button>
+      <button id="undoBtn">undo&nbsp;<kbd>u</kbd></button>
+      <button id="eraseBtn">erase&nbsp;<kbd>e</kbd></button>
+    </div>
+    <div class="hint" style="margin-top:6px">
+      drag to draw &mdash; lines snap to <b>horizontal</b>, <b>vertical</b> or <b>slope-1 diagonal</b>.<br>
+      short click with no drag drops a dot. hold a drag starting on an existing point to continue from it.
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>glyph</h3>
+    <svg id="preview" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"></svg>
+    <div class="meta" id="segMeta"></div>
+  </div>
+
+  <div class="section">
+    <h3>saved</h3>
+    <div id="savedList"></div>
+  </div>
+</div>
+
+<script>
+'use strict';
+
+const N = 16;            // grid points per side
+const GRID_SPAN = N - 1; // 15
+const PAD = 2.5;         // border units on every side (safe space)
+const OUTER = GRID_SPAN + 2 * PAD; // 20
+const CELL = 30;         // px per svg unit when drawing
+const CSIZE = OUTER * CELL; // 600
+
+const board = document.getElementById('board');
+board.width = CSIZE;
+board.height = CSIZE;
+const ctx = board.getContext('2d');
+
+function px(i) { return PAD * CELL + i * CELL; }
+function toGrid2(e) {
+  const r = board.getBoundingClientRect();
+  return [(e.clientX - r.left) / CELL - PAD, (e.clientY - r.top) / CELL - PAD];
+}
+
+const CHAR_CODES = Array.from({ length: 95 }, (_, i) => i + 32);
+const NAMES = {
+  32: 'space', 33: 'bang', 34: 'dquote', 35: 'hash', 36: 'dollar', 37: 'percent',
+  38: 'amp', 39: 'squote', 40: 'lparen', 41: 'rparen', 42: 'star', 43: 'plus',
+  44: 'comma', 45: 'minus', 46: 'period', 47: 'slash', 58: 'colon', 59: 'semicolon',
+  60: 'less', 61: 'equals', 62: 'greater', 63: 'question', 64: 'at',
+  91: 'lbracket', 92: 'backslash', 93: 'rbracket', 94: 'caret', 95: 'underscore',
+  96: 'backtick', 123: 'lbrace', 124: 'pipe', 125: 'rbrace', 126: 'tilde'
+};
+function defaultName(code) {
+  if ((code >= 48 && code <= 57) || (code >= 65 && code <= 90) || (code >= 97 && code <= 122)) return String.fromCharCode(code);
+  return NAMES[code] || ('c' + code);
+}
+const NAME_TO_CODE = {};
+for (const code of CHAR_CODES) NAME_TO_CODE[defaultName(code)] = code;
+
+let segments = [];      // {x1,y1,x2,y2} grid coords
+let undoStack = [];
+let drawing = false;
+let eraser = false;
+let anchor = null;      // grid point
+let curCode = 32;
+let savedFiles = [];
+let preview = null;
+
+function segKey(x1, y1, x2, y2) {
+  if (x2 < x1 || (x2 === x1 && y2 < y1)) { const t = x1; x1 = x2; x2 = t; const u = y1; y1 = y2; y2 = u; }
+  return x1 + ',' + y1 + ',' + x2 + ',' + y2 + ',' + (x1 === x2 && y1 === y2 ? 'd' : 'l');
+}
+function pushUndo() { undoStack.push(segments.map((s) => ({ ...s }))); if (undoStack.length > 60) undoStack.shift(); }
+function undo() {
+  if (!undoStack.length) return;
+  segments = undoStack.pop();
+  redraw();
+}
+function commitSeg(s) {
+  const k = segKey(s.x1, s.y1, s.x2, s.y2);
+  if (!segments.some((q) => segKey(q.x1, q.y1, q.x2, q.y2) === k)) segments.push(s);
+}
+function pointDistToSeg(gx, gy, s) {
+  if (s.x1 === s.x2 && s.y1 === s.y2) return Math.hypot(gx - s.x1, gy - s.y1);
+  const dx = s.x2 - s.x1, dy = s.y2 - s.y1;
+  const t = Math.max(0, Math.min(1, ((gx - s.x1) * dx + (gy - s.y1) * dy) / (dx * dx + dy * dy)));
+  return Math.hypot(gx - (s.x1 + t * dx), gy - (s.y1 + t * dy));
+}
+
+const DIRS = [[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]];
+function snappedSeg(ax, ay, cx, cy) {
+  const dx = cx - ax, dy = cy - ay;
+  if (dx === 0 && dy === 0) return null;
+  let best = null, bd = Infinity;
+  for (const [vx, vy] of DIRS) {
+    const den = vx * vx + vy * vy;
+    let kmax = Infinity;
+    if (vx > 0) kmax = Math.min(kmax, GRID_SPAN - ax);
+    if (vx < 0) kmax = Math.min(kmax, ax);
+    if (vy > 0) kmax = Math.min(kmax, GRID_SPAN - ay);
+    if (vy < 0) kmax = Math.min(kmax, ay);
+    if (kmax < 1) continue;
+    const raw = Math.round((dx * vx + dy * vy) / den);
+    if (raw < 1) continue;
+    const k = Math.min(kmax, raw);
+    const ex = ax + k * vx, ey = ay + k * vy;
+    const d = Math.hypot(dx - (ex - ax), dy - (ey - ay));
+    if (d < bd) { bd = d; best = { x1: ax, y1: ay, x2: ex, y2: ey }; }
+  }
+  return best;
+}
+
+function nearestVertex(gx, gy) {
+  let best = null, bd = 0.45;
+  for (const s of segments) {
+    for (const [x, y] of [[s.x1, s.y1], [s.x2, s.y2]]) {
+      const d = Math.hypot(gx - x, gy - y);
+      if (d < bd) { bd = d; best = [x, y]; }
+    }
+  }
+  return best;
+}
+
+function drawBoard() {
+  ctx.clearRect(0, 0, CSIZE, CSIZE);
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(0, 0, CSIZE, CSIZE);
+
+  ctx.strokeStyle = '#f3f4f6';
+  ctx.lineWidth = 1;
+  for (let a = 0; a < N; a++) {
+    for (let b = 0; b < N; b++) {
+      ctx.beginPath();
+      ctx.arc(px(a) + CELL / 2, px(b) + CELL / 2, 1.25, 0, Math.PI * 2);
+      ctx.fillStyle = '#e5e7eb';
+      ctx.fill();
+    }
+  }
+
+  ctx.strokeStyle = '#d1d5db';
+  ctx.setLineDash([4, 4]);
+  ctx.lineWidth = 1;
+  ctx.strokeRect(PAD * CELL, PAD * CELL, GRID_SPAN * CELL, GRID_SPAN * CELL);
+  ctx.setLineDash([]);
+
+  ctx.lineCap = 'round';
+  ctx.strokeStyle = '#000';
+  ctx.lineWidth = CELL;
+  for (const s of segments) {
+    ctx.beginPath();
+    ctx.moveTo(px(s.x1), px(s.y1));
+    if (s.x1 === s.x2 && s.y1 === s.y2) {
+      ctx.arc(px(s.x1), px(s.y1), CELL / 2, 0, Math.PI * 2); ctx.fill(); ctx.beginPath();
+    }
+    ctx.lineTo(px(s.x2), px(s.y2));
+    ctx.stroke();
+  }
+
+  if (preview) {
+    ctx.strokeStyle = 'rgba(37, 99, 235, .85)';
+    ctx.lineWidth = CELL;
+    ctx.setLineDash([12, 8]);
+    ctx.beginPath();
+    ctx.moveTo(px(preview.x1), px(preview.y1));
+    ctx.lineTo(px(preview.x2), px(preview.y2));
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+}
+
+function buildSVG() {
+  const lines = segments.map((s) =>
+    `      <line x1="${+(PAD + s.x1).toFixed(3)}" y1="${+(PAD + s.y1).toFixed(3)}" x2="${+(PAD + s.x2).toFixed(3)}" y2="${+(PAD + s.y2).toFixed(3)}"/>`
+  ).join('\n');
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${OUTER} ${OUTER}" width="${OUTER}" height="${OUTER}" shape-rendering="crispEdges">\n` +
+    `  <rect width="${OUTER}" height="${OUTER}" fill="#ffffff"/>\n` +
+    `  <g fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round">\n${lines}\n  </g>\n</svg>\n`;
+}
+
+function parseSVG(text) {
+  const segs = [];
+  const doc = new DOMParser().parseFromString(text, 'image/svg+xml');
+  doc.querySelectorAll('line').forEach((l) => {
+    const x1 = Math.round(parseFloat(l.getAttribute('x1')) - PAD);
+    const y1 = Math.round(parseFloat(l.getAttribute('y1')) - PAD);
+    const x2 = Math.round(parseFloat(l.getAttribute('x2')) - PAD);
+    const y2 = Math.round(parseFloat(l.getAttribute('y2')) - PAD);
+    if ([x1, y1, x2, y2].every((v) => v >= 0 && v <= GRID_SPAN)) segs.push({ x1, y1, x2, y2 });
+  });
+  return segs;
+}
+
+function refreshMeta() {
+  const c = String.fromCharCode(curCode);
+  document.getElementById('charMeta').textContent =
+    `ascii ${curCode} (0x${curCode.toString(16).padStart(2, '0')}) · ${c === ' ' ? 'space' : c}`;
+  document.getElementById('overlay').textContent =
+    `char ${curCode} · ${defaultName(curCode)} · ${segments.length} seg(s)`;
+  document.getElementById('fileInput').value = defaultName(curCode);
+  document.getElementById('segMeta').textContent = `${segments.length} segment(s) · 20x20 box · 2.5 unit border`;
+}
+
+function redraw() {
+  drawBoard();
+  const prev = document.getElementById('preview');
+  prev.innerHTML = buildSVG();
+  refreshMeta();
+  const btns = document.querySelectorAll('#charGrid .char-btn');
+  btns.forEach((b) => b.classList.toggle('active', Number(b.dataset.code) === curCode));
+}
+
+function setChar(code) {
+  curCode = code;
+  anchor = null;
+  preview = null;
+  undoStack = [];
+  const fname = defaultName(code) + '.svg';
+  if (savedFiles.includes(fname)) {
+    fetch('/chars/' + encodeURIComponent(fname)).then((r) => r.text()).then((t) => {
+      segments = parseSVG(t);
+      redraw();
+    });
+  } else {
+    segments = [];
+    redraw();
+  }
+  document.getElementById('charInput').value = String.fromCharCode(code) === ' ' ? '' : String.fromCharCode(code);
+}
+
+function refreshList() {
+  fetch('/list').then((r) => r.json()).then((files) => {
+    savedFiles = files;
+    const el = document.getElementById('savedList');
+    el.innerHTML = '';
+    for (const f of files) {
+      const b = document.createElement('button');
+      b.textContent = f;
+      b.title = 'open ' + f;
+      b.addEventListener('click', () => loadFile(f));
+      el.appendChild(b);
+    }
+  });
+}
+
+function loadFile(fname) {
+  fetch('/chars/' + encodeURIComponent(fname)).then((r) => r.text()).then((t) => {
+    segments = parseSVG(t);
+    document.getElementById('fileInput').value = fname.replace(/\.svg$/, '');
+    const code = NAME_TO_CODE[fname.replace(/\.svg$/, '')];
+    if (code) {
+      curCode = code;
+      document.getElementById('charInput').value = String.fromCharCode(code) === ' ' ? '' : String.fromCharCode(code);
+    }
+    anchor = null;
+    preview = null;
+    undoStack = [];
+    redraw();
+  });
+}
+
+function status(msg, cls) {
+  const el = document.getElementById('status');
+  el.textContent = msg;
+  el.className = cls || '';
+}
+
+function save() {
+  let name = document.getElementById('fileInput').value.trim();
+  if (!name) name = defaultName(curCode);
+  name = name.replace(/\.svg$/i, '');
+  if (!/^[A-Za-z0-9][A-Za-z0-9._-]*$/.test(name)) name = defaultName(curCode) + '-' + name.replace(/[^A-Za-z0-9._-]/g, '_');
+  fetch('/save', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, svg: buildSVG() })
+  }).then((r) => r.json()).then((j) => {
+    if (j.ok) {
+      status('saved chars/' + j.file, 'ok');
+      refreshList();
+    } else {
+      status('error: ' + j.error, 'bad');
+    }
+  });
+}
+
+// --- events ---
+board.addEventListener('pointerdown', (e) => {
+  if (e.button !== 0) return;
+  board.setPointerCapture(e.pointerId);
+  const [gx, gy] = toGrid2(e);
+  if (eraser) {
+    pushUndo();
+    deleteNear(gx, gy);
+    drawing = true;
+    return;
+  }
+  pushUndo();
+  const v = nearestVertex(gx, gy);
+  if (v) {
+    anchor = v;
+  } else {
+    anchor = [Math.round(gx), Math.round(gy)];
+    anchor = [Math.max(0, Math.min(GRID_SPAN, anchor[0])), Math.max(0, Math.min(GRID_SPAN, anchor[1]))];
+  }
+  drawing = true;
+});
+
+board.addEventListener('pointermove', (e) => {
+  const [gx, gy] = toGrid2(e);
+  if (!drawing) return;
+  if (eraser) { deleteNear(gx, gy); return; }
+  preview = snappedSeg(anchor[0], anchor[1], Math.round(gx), Math.round(gy));
+  redraw();
+});
+
+board.addEventListener('pointerup', (e) => {
+  if (!drawing) return;
+  if (eraser) { drawing = false; redraw(); return; }
+  const [gx, gy] = toGrid2(e);
+  const dx = gx - anchor[0], dy = gy - anchor[1];
+  if (Math.hypot(dx, dy) < 0.4) {
+    const x = Math.max(0, Math.min(GRID_SPAN, Math.round(gx)));
+    const y = Math.max(0, Math.min(GRID_SPAN, Math.round(gy)));
+    commitSeg({ x1: x, y1: y, x2: x, y2: y });
+    anchor = [x, y];
+  } else if (preview) {
+    commitSeg(preview);
+    anchor = [preview.x2, preview.y2];
+  }
+  preview = null;
+  drawing = false;
+  redraw();
+});
+
+function deleteNear(gx, gy) {
+  const kept = [];
+  for (const s of segments) if (pointDistToSeg(gx, gy, s) > 0.7) kept.push(s);
+  if (kept.length !== segments.length) { segments = kept; redraw(); }
+}
+
+// --- char grid ---
+const gridEl = document.getElementById('charGrid');
+for (const code of CHAR_CODES) {
+  const b = document.createElement('button');
+  b.className = 'char-btn';
+  b.dataset.code = code;
+  const ch = String.fromCharCode(code);
+  b.textContent = ch === ' ' ? '\u2423' : ch;
+  b.title = code + ' · ' + defaultName(code);
+  b.addEventListener('click', () => setChar(code));
+  gridEl.appendChild(b);
+}
+
+const charInput = document.getElementById('charInput');
+charInput.addEventListener('change', () => {
+  const v = charInput.value;
+  const code = v.length ? v.charCodeAt(0) : curCode;
+  if (code >= 32 && code <= 126) setChar(code);
+  else charInput.value = String.fromCharCode(curCode);
+});
+charInput.addEventListener('input', (e) => {
+  if (charInput.value.length > 1) charInput.value = charInput.value.slice(-1);
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => setChar(curCode === 32 ? 126 : curCode - 1));
+document.getElementById('nextBtn').addEventListener('click', () => setChar(curCode === 126 ? 32 : curCode + 1));
+document.getElementById('clearBtn').addEventListener('click', () => { status(''); if (!segments.length) return; pushUndo(); segments = []; redraw(); });
+document.getElementById('undoBtn').addEventListener('click', undo);
+document.getElementById('eraseBtn').addEventListener('click', () => {
+  eraser = !eraser;
+  document.getElementById('eraseBtn').classList.toggle('toggled', eraser);
+  status('', '');
+});
+document.getElementById('saveBtn').addEventListener('click', save);
+
+window.addEventListener('keydown', (e) => {
+  const tag = document.activeElement && document.activeElement.tagName;
+  const typing = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
+  if ((e.metaKey || e.ctrlKey) && (e.key === 'z' || e.key === 'Z')) { undo(); return; }
+  if (typing) return;
+  const k = e.key.toLowerCase();
+  if (k === 's') { e.preventDefault(); save(); }
+  else if (k === 'd') { document.getElementById('clearBtn').click(); }
+  else if (k === 'u') { undo(); }
+  else if (k === 'e') { document.getElementById('eraseBtn').click(); }
+  else if (e.key === 'ArrowLeft') { setChar(curCode === 32 ? 126 : curCode - 1); e.preventDefault(); }
+  else if (e.key === 'ArrowRight') { setChar(curCode === 126 ? 32 : curCode + 1); e.preventDefault(); }
+});
+
+redraw();
+refreshList();
+setChar(32);
+</script>
+</body>
+</html>
