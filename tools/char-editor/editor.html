@@ -105,7 +105,7 @@
 
   <div class="section">
     <h3>glyph</h3>
-    <svg id="preview" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"></svg>
+    <svg id="preview" viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg"></svg>
     <div class="meta" id="segMeta"></div>
   </div>
 
@@ -118,22 +118,25 @@
 <script>
 'use strict';
 
-const N = 16;            // grid points per side
-const GRID_SPAN = N - 1; // 15
-const PAD = 2.5;         // border units on every side (safe space)
-const OUTER = GRID_SPAN + 2 * PAD; // 20
+const N = 8;             // grid points per side
+const GRID_SPAN = N - 1; // 7
+const OUTER = 8;         // svg box size (8x8)
+const MARGIN = 1;        // border units on every side (safe space)
+const STEP = (OUTER - 2 * MARGIN) / GRID_SPAN; // 6/7
 const CELL = 30;         // px per svg unit when drawing
-const CSIZE = OUTER * CELL; // 600
+const CSIZE = OUTER * CELL; // 240
 
 const board = document.getElementById('board');
 board.width = CSIZE;
 board.height = CSIZE;
 const ctx = board.getContext('2d');
 
-function px(i) { return PAD * CELL + i * CELL; }
+function px(i) { return (MARGIN + i * STEP) * CELL; }
 function toGrid2(e) {
   const r = board.getBoundingClientRect();
-  return [(e.clientX - r.left) / CELL - PAD, (e.clientY - r.top) / CELL - PAD];
+  const ux = (e.clientX - r.left) / CELL - MARGIN;
+  const uy = (e.clientY - r.top) / CELL - MARGIN;
+  return [ux / STEP, uy / STEP];
 }
 
 const CHAR_CODES = Array.from({ length: 95 }, (_, i) => i + 32);
@@ -221,12 +224,11 @@ function drawBoard() {
   ctx.fillStyle = '#fff';
   ctx.fillRect(0, 0, CSIZE, CSIZE);
 
-  ctx.strokeStyle = '#f3f4f6';
-  ctx.lineWidth = 1;
+  const LW = STEP * CELL * 0.65;
   for (let a = 0; a < N; a++) {
     for (let b = 0; b < N; b++) {
       ctx.beginPath();
-      ctx.arc(px(a) + CELL / 2, px(b) + CELL / 2, 1.25, 0, Math.PI * 2);
+      ctx.arc(px(a), px(b), 1.5, 0, Math.PI * 2);
       ctx.fillStyle = '#e5e7eb';
       ctx.fill();
     }
@@ -235,17 +237,17 @@ function drawBoard() {
   ctx.strokeStyle = '#d1d5db';
   ctx.setLineDash([4, 4]);
   ctx.lineWidth = 1;
-  ctx.strokeRect(PAD * CELL, PAD * CELL, GRID_SPAN * CELL, GRID_SPAN * CELL);
+  ctx.strokeRect(MARGIN * CELL, MARGIN * CELL, GRID_SPAN * STEP * CELL, GRID_SPAN * STEP * CELL);
   ctx.setLineDash([]);
 
   ctx.lineCap = 'round';
   ctx.strokeStyle = '#000';
-  ctx.lineWidth = CELL;
+  ctx.lineWidth = LW;
   for (const s of segments) {
     ctx.beginPath();
     ctx.moveTo(px(s.x1), px(s.y1));
     if (s.x1 === s.x2 && s.y1 === s.y2) {
-      ctx.arc(px(s.x1), px(s.y1), CELL / 2, 0, Math.PI * 2); ctx.fill(); ctx.beginPath();
+      ctx.arc(px(s.x1), px(s.y1), LW / 2, 0, Math.PI * 2); ctx.fill();
     }
     ctx.lineTo(px(s.x2), px(s.y2));
     ctx.stroke();
@@ -253,7 +255,7 @@ function drawBoard() {
 
   if (preview) {
     ctx.strokeStyle = 'rgba(37, 99, 235, .85)';
-    ctx.lineWidth = CELL;
+    ctx.lineWidth = LW;
     ctx.setLineDash([12, 8]);
     ctx.beginPath();
     ctx.moveTo(px(preview.x1), px(preview.y1));
@@ -263,23 +265,25 @@ function drawBoard() {
   }
 }
 
+function svgX(i) { return +(MARGIN + i * STEP).toFixed(3); }
 function buildSVG() {
   const lines = segments.map((s) =>
-    `      <line x1="${+(PAD + s.x1).toFixed(3)}" y1="${+(PAD + s.y1).toFixed(3)}" x2="${+(PAD + s.x2).toFixed(3)}" y2="${+(PAD + s.y2).toFixed(3)}"/>`
+    `      <line x1="${svgX(s.x1)}" y1="${svgX(s.y1)}" x2="${svgX(s.x2)}" y2="${svgX(s.y2)}"/>`
   ).join('\n');
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${OUTER} ${OUTER}" width="${OUTER}" height="${OUTER}" shape-rendering="crispEdges">\n` +
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${OUTER} ${OUTER}" width="${OUTER}" height="${OUTER}">\n` +
     `  <rect width="${OUTER}" height="${OUTER}" fill="#ffffff"/>\n` +
-    `  <g fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round">\n${lines}\n  </g>\n</svg>\n`;
+    `  <g fill="none" stroke="#000000" stroke-width="0.65" stroke-linecap="round">\n${lines}\n  </g>\n</svg>\n`;
 }
 
 function parseSVG(text) {
   const segs = [];
   const doc = new DOMParser().parseFromString(text, 'image/svg+xml');
   doc.querySelectorAll('line').forEach((l) => {
-    const x1 = Math.round(parseFloat(l.getAttribute('x1')) - PAD);
-    const y1 = Math.round(parseFloat(l.getAttribute('y1')) - PAD);
-    const x2 = Math.round(parseFloat(l.getAttribute('x2')) - PAD);
-    const y2 = Math.round(parseFloat(l.getAttribute('y2')) - PAD);
+    const n = (v) => Math.round((parseFloat(v) - MARGIN) / STEP);
+    const x1 = n(l.getAttribute('x1'));
+    const y1 = n(l.getAttribute('y1'));
+    const x2 = n(l.getAttribute('x2'));
+    const y2 = n(l.getAttribute('y2'));
     if ([x1, y1, x2, y2].every((v) => v >= 0 && v <= GRID_SPAN)) segs.push({ x1, y1, x2, y2 });
   });
   return segs;
@@ -292,7 +296,7 @@ function refreshMeta() {
   document.getElementById('overlay').textContent =
     `char ${curCode} · ${defaultName(curCode)} · ${segments.length} seg(s)`;
   document.getElementById('fileInput').value = defaultName(curCode);
-  document.getElementById('segMeta').textContent = `${segments.length} segment(s) · 20x20 box · 2.5 unit border`;
+  document.getElementById('segMeta').textContent = `${segments.length} segment(s) · 8x8 box · 1 unit border`;
 }
 
 function redraw() {
