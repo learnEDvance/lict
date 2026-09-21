@@ -54,6 +54,19 @@ http.createServer((req, res) => {
     return;
   }
 
+  if (p.startsWith('/chars/')) {
+    const name = sanitize(p.slice('/chars/'.length));
+    const file = path.join(CHARS_DIR, name + '.svg');
+    if (!name || !file.startsWith(CHARS_DIR) || !fs.existsSync(file)) {
+      res.writeHead(404, { 'Content-Type': 'text/plain' });
+      res.end('not found');
+      return;
+    }
+    res.writeHead(200, { 'Content-Type': MIME['.svg'] });
+    fs.createReadStream(file).pipe(res);
+    return;
+  }
+
   let file;
   if (p === '/' || p === '/editor.html') {
     file = path.join(ROOT, 'editor.html');

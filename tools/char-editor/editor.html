@@ -49,8 +49,9 @@
     width: 34px; height: 34px; padding: 0; font-family: inherit; flex: none;
   }
   button.char-btn.active { outline: 2px solid #2563eb; background: #dbeafe; }
+  .dl-btn { width: 30px; flex: none; padding: 7px 0; }
   .char-grid { display: grid; grid-template-columns: repeat(8, 34px); gap: 4px; }
-  .char-grid-wrap { max-height: 190px; overflow-y: auto; border: 1px solid #f3f4f6; border-radius: 6px; padding: 6px; }
+  .char-grid-wrap { border: 1px solid #f3f4f6; border-radius: 6px; padding: 6px; }
   #preview { display: block; width: 150px; height: 150px; border: 1px dashed #d1d5db; border-radius: 8px; background: #fff; }
   #status { font-size: 12px; color: #374151; min-height: 16px; margin-top: 6px; }
   #status.ok { color: #15803d; }
@@ -88,6 +89,7 @@
       <button id="saveBtn" class="primary">save&nbsp;<kbd>s</kbd></button>
     </div>
     <div id="status"></div>
+    <div class="hint" style="margin-top:6px">characters live in this browser (no server). use export to get real .svg files.</div>
   </div>
 
   <div class="section">
@@ -111,6 +113,9 @@
 
   <div class="section">
     <h3>saved</h3>
+    <div class="row" style="margin-bottom:6px">
+      <button id="exportBtn" title="download every saved char as .svg files in a zip">export all (.zip)</button>
+    </div>
     <div id="savedList"></div>
   </div>
 </div>
@@ -161,8 +166,138 @@ let drawing = false;
 let eraser = false;
 let anchor = null;      // grid point
 let curCode = 32;
-let savedFiles = [];
 let preview = null;
+
+// --- local persistence (no server needed) ---
+const savePrefix = 'char:';
+const store = {
+  get(key) { try { return localStorage.getItem(key); } catch { return null; } },
+  set(key, val) {
+    try { localStorage.setItem(key, val); return true; }
+    catch (e) { status('browser storage blocked: ' + ((e && e.message) || e), 'bad'); return false; }
+  },
+  keys() { try { return Object.keys(localStorage); } catch { return []; } }
+};
+function savedNames() {
+  return store.keys()
+    .filter((k) => k.startsWith(savePrefix))
+    .map((k) => k.slice(savePrefix.length))
+    .filter(Boolean)
+    .sort();
+}
+function loadChar(name) { return store.get(savePrefix + name); }
+
+function download(filename, text, type) {
+  const blob = new Blob([text], { type: type || 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+// --- minimal ZIP writer (store method, no compression) ---
+const CRC_TABLE = (() => {
+  const t = new Uint32Array(256);
+  for (let n = 0; n < 256; n++) {
+    let c = n;
+    for (let k = 0; k < 8; k++) c = (c & 1) ? (0xedb88320 ^ (c >>> 1)) : (c >>> 1);
+    t[n] = c >>> 0;
+  }
+  return t;
+})();
+function crc32(bytes) {
+  let c = 0xffffffff;
+  for (let i = 0; i < bytes.length; i++) c = CRC_TABLE[(c ^ bytes[i]) & 0xff] ^ (c >>> 8);
+  return (c ^ 0xffffffff) >>> 0;
+}
+function buildZIP(files) {
+  const enc = new TextEncoder();
+  const parts = [];
+  const central = [];
+  let offset = 0;
+  for (const f of files) {
+    const nameBytes = enc.encode(f.name);
+    const size = f.data.length;
+    const crc = crc32(f.data);
+    const lh = new Uint8Array(30 + nameBytes.length);
+    const dv = new DataView(lh.buffer);
+    dv.setUint32(0, 0x04034b50, true);
+    dv.setUint16(4, 20, true);
+    dv.setUint16(6, 0, true);
+    dv.setUint16(8, 0, true);
+    dv.setUint16(10, 0, true);
+    dv.setUint16(12, 0x21, true);
+    dv.setUint32(14, crc, true);
+    dv.setUint32(18, size, true);
+    dv.setUint32(22, size, true);
+    dv.setUint16(26, nameBytes.length, true);
+    dv.setUint16(28, 0, true);
+    lh.set(nameBytes, 30);
+    parts.push(lh, f.data);
+    central.push({ nameBytes, crc, size, offset });
+    offset += lh.length + size;
+  }
+  const cdOffset = offset;
+  const cdParts = [];
+  for (const c of central) {
+    const ch = new Uint8Array(46 + c.nameBytes.length);
+    const dv = new DataView(ch.buffer);
+    dv.setUint32(0, 0x02014b50, true);
+    dv.setUint16(4, 20, true);
+    dv.setUint16(6, 20, true);
+    dv.setUint16(8, 0, true);
+    dv.setUint16(10, 0, true);
+    dv.setUint16(12, 0, true);
+    dv.setUint16(14, 0x21, true);
+    dv.setUint32(16, c.crc, true);
+    dv.setUint32(20, c.size, true);
+    dv.setUint32(24, c.size, true);
+    dv.setUint16(28, c.nameBytes.length, true);
+    dv.setUint16(30, 0, true);
+    dv.setUint16(32, 0, true);
+    dv.setUint16(34, 0, true);
+    dv.setUint16(36, 0, true);
+    dv.setUint32(38, 0, true);
+    dv.setUint32(42, c.offset, true);
+    ch.set(c.nameBytes, 46);
+    cdParts.push(ch);
+  }
+  const cdSize = cdParts.reduce((s, b) => s + b.length, 0);
+  const totalBytes = parts.reduce((s, b) => s + b.length, 0) + cdSize + 22;
+  const out = new Uint8Array(totalBytes);
+  let p = 0;
+  for (const b of parts) { out.set(b, p); p += b.length; }
+  for (const b of cdParts) { out.set(b, p); p += b.length; }
+  const eocd = new DataView(out.buffer, p, 22);
+  eocd.setUint32(0, 0x06054b50, true);
+  eocd.setUint16(4, 0, true);
+  eocd.setUint16(6, 0, true);
+  eocd.setUint16(8, central.length, true);
+  eocd.setUint16(10, central.length, true);
+  eocd.setUint32(12, cdSize, true);
+  eocd.setUint32(16, cdOffset, true);
+  eocd.setUint16(20, 0, true);
+  return out;
+}
+function exportAll() {
+  const names = savedNames();
+  if (!names.length) { status('nothing saved to export', 'bad'); return; }
+  const files = names.map((n) => ({ name: n + '.svg', data: new TextEncoder().encode(loadChar(n) || '') }));
+  const blob = new Blob([buildZIP(files)], { type: 'application/zip' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'chars.zip';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  status('exported ' + files.length + ' .svg -> chars.zip', 'ok');
+}
 
 function segKey(x1, y1, x2, y2) {
   if (x2 < x1 || (x2 === x1 && y2 < y1)) { const t = x1; x1 = x2; x2 = t; const u = y1; y1 = y2; y2 = u; }
@@ -313,48 +448,58 @@ function setChar(code) {
   anchor = null;
   preview = null;
   undoStack = [];
-  const fname = defaultName(code) + '.svg';
-  if (savedFiles.includes(fname)) {
-    fetch('/chars/' + encodeURIComponent(fname)).then((r) => r.text()).then((t) => {
-      segments = parseSVG(t);
-      redraw();
-    });
-  } else {
-    segments = [];
-    redraw();
-  }
+  const svg = loadChar(defaultName(code));
+  segments = svg ? parseSVG(svg) : [];
+  redraw();
   document.getElementById('charInput').value = String.fromCharCode(code) === ' ' ? '' : String.fromCharCode(code);
 }
 
 function refreshList() {
-  fetch('/list').then((r) => r.json()).then((files) => {
-    savedFiles = files;
-    const el = document.getElementById('savedList');
-    el.innerHTML = '';
-    for (const f of files) {
-      const b = document.createElement('button');
-      b.textContent = f;
-      b.title = 'open ' + f;
-      b.addEventListener('click', () => loadFile(f));
-      el.appendChild(b);
-    }
-  });
+  const names = savedNames();
+  const el = document.getElementById('savedList');
+  el.innerHTML = '';
+  if (!names.length) {
+    const d = document.createElement('div');
+    d.className = 'hint';
+    d.textContent = 'nothing saved yet — draw and hit save.';
+    el.appendChild(d);
+    return;
+  }
+  for (const name of names) {
+    const row = document.createElement('div');
+    row.className = 'row';
+    const open = document.createElement('button');
+    open.textContent = name + '.svg';
+    open.title = 'open ' + name;
+    open.addEventListener('click', () => loadFile(name));
+    const dl = document.createElement('button');
+    dl.className = 'dl-btn';
+    dl.textContent = '\u2193';
+    dl.title = 'download ' + name + '.svg';
+    dl.addEventListener('click', () => {
+      const svg = loadChar(name);
+      if (svg) download(name + '.svg', svg, 'image/svg+xml');
+    });
+    row.appendChild(open);
+    row.appendChild(dl);
+    el.appendChild(row);
+  }
 }
 
-function loadFile(fname) {
-  fetch('/chars/' + encodeURIComponent(fname)).then((r) => r.text()).then((t) => {
-    segments = parseSVG(t);
-    document.getElementById('fileInput').value = fname.replace(/\.svg$/, '');
-    const code = NAME_TO_CODE[fname.replace(/\.svg$/, '')];
-    if (code) {
-      curCode = code;
-      document.getElementById('charInput').value = String.fromCharCode(code) === ' ' ? '' : String.fromCharCode(code);
-    }
-    anchor = null;
-    preview = null;
-    undoStack = [];
-    redraw();
-  });
+function loadFile(name) {
+  const svg = loadChar(name);
+  if (!svg) return;
+  segments = parseSVG(svg);
+  document.getElementById('fileInput').value = name;
+  const code = NAME_TO_CODE[name];
+  if (code) {
+    curCode = code;
+    document.getElementById('charInput').value = String.fromCharCode(code) === ' ' ? '' : String.fromCharCode(code);
+  }
+  anchor = null;
+  preview = null;
+  undoStack = [];
+  redraw();
 }
 
 function status(msg, cls) {
@@ -368,18 +513,10 @@ function save() {
   if (!name) name = defaultName(curCode);
   name = name.replace(/\.svg$/i, '');
   if (!/^[A-Za-z0-9][A-Za-z0-9._-]*$/.test(name)) name = defaultName(curCode) + '-' + name.replace(/[^A-Za-z0-9._-]/g, '_');
-  fetch('/save', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, svg: buildSVG() })
-  }).then((r) => r.json()).then((j) => {
-    if (j.ok) {
-      status('saved chars/' + j.file, 'ok');
-      refreshList();
-    } else {
-      status('error: ' + j.error, 'bad');
-    }
-  });
+  name = name.replace(/^\.+/, '').slice(0, 80);
+  if (!store.set(savePrefix + name, buildSVG())) return;
+  status('saved ' + name + '.svg', 'ok');
+  refreshList();
 }
 
 // --- events ---
@@ -471,6 +608,7 @@ document.getElementById('eraseBtn').addEventListener('click', () => {
   status('', '');
 });
 document.getElementById('saveBtn').addEventListener('click', save);
+document.getElementById('exportBtn').addEventListener('click', exportAll);
 
 window.addEventListener('keydown', (e) => {
   const tag = document.activeElement && document.activeElement.tagName;
