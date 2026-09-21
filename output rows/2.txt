@@ -1,0 +1,31 @@
+```python
+def fibonacci(n):
+    """
+    Calculates the nth Fibonacci number using dynamic programming.
+
+    Args:
+        n: The index of the desired Fibonacci number.
+
+    Returns:
+        The nth Fibonacci number.
+    """
+    if n <= 0:
+        return 0  # Base case: 0th Fibonacci is 0
+    elif n == 1:
+        return 1
+    else:
+        a = 0
+        b = 1
+        for _ in range(n - 1):
+            a, b = b, a + b
+        return b
+
+# Example usage:
+print(fibonacci(5))  # Output: 5
+print(fibonacci(10)) # Output: 55
+```
+
+**Explanation:**
+
+1. **Base Cases:**
+   - `if n <= 0:`: If the input is zero or negative

@@ -1,0 +1,1 @@
+The OSI model layer 3 is a network-independent, data-transport layer that provides a simplified representation of network communication.

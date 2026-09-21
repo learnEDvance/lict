@@ -1,0 +1,14 @@
+```python
+def format_name_age(name, age):
+    """Formats a name and age into a string."""
+
+    return f"Name: {name}, Age: {age}"
+```
+
+**Explanation:**
+
+1. **`def format_name_age(name, age):`**: This defines a function named `format_name_age` that takes two arguments: `name` and `age`.
+2. **`"""Formats a name and age into a string."""`**:  This is a docstring explaining what the function does. It's good practice to include docstrings for clarity.
+3. **`return f"Name: {name}, Age: {age}"`**: This line uses an f-string (formatted string literal) to create the output string.
+   - `f"..."`:  This is a function syntax that allows you to embed variables directly into strings.
+   - `name`: The name

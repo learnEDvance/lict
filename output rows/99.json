@@ -1,0 +1,157 @@
+{
+  "request_num": 99,
+  "request_files": [
+    "99.png",
+    "99.txt"
+  ],
+  "has_images": true,
+  "has_text": true,
+  "target_model": "google/gemma-4-e4b",
+  "model_switch": {
+    "switched": false,
+    "target": "google/gemma-4-e4b",
+    "load_time_seconds": 0,
+    "loaded_before": [
+      "google/gemma-4-e4b"
+    ]
+  },
+  "payload": {
+    "model": "google/gemma-4-e4b",
+    "stream": true,
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "reasoning_effort": "none"
+  },
+  "extra": {
+    "routed_to_vision": true
+  },
+  "attempts": 1,
+  "t_queued": "2026-09-21T17:17:44.188776+00:00",
+  "t_sent": "2026-09-21T17:17:45.015169+00:00",
+  "t_done": "2026-09-21T17:17:51.032816+00:00",
+  "ok": true,
+  "http_status": 200,
+  "reason": "OK",
+  "headers_ms": 7.699951171875,
+  "ttft_ms": 2315.23291015625,
+  "total_ms": 6017.407958984375,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 104,
+    "completion_tokens": 29,
+    "total_tokens": 133,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "server_ids": {
+    "id": "chatcmpl-0hpguit873wf16xnacua1",
+    "created": 1790011065,
+    "model": "google/gemma-4-e4b",
+    "system_fingerprint": "google/gemma-4-e4b"
+  },
+  "tokens_per_second_client": 7.83,
+  "resource_samples_during": {
+    "gpu": [
+      {
+        "ts_ms": 1790011065508.6956,
+        "nvgpu_ts": "2026/09/21 22:47:45.491",
+        "gpu_util_pct": 3.0,
+        "gpu_mem_util_pct": 0.0,
+        "power_w": 8.99,
+        "gpu_mem_mib": 3881.0,
+        "sm_mhz": 427.0,
+        "mem_mhz": 5501.0
+      },
+      {
+        "ts_ms": 1790011067550.6956,
+        "nvgpu_ts": "2026/09/21 22:47:47.525",
+        "gpu_util_pct": 15.0,
+        "gpu_mem_util_pct": 3.0,
+        "power_w": 32.06,
+        "gpu_mem_mib": 3881.0,
+        "sm_mhz": 2070.0,
+        "mem_mhz": 6121.0
+      },
+      {
+        "ts_ms": 1790011069540.2288,
+        "nvgpu_ts": "2026/09/21 22:47:49.518",
+        "gpu_util_pct": 26.0,
+        "gpu_mem_util_pct": 11.0,
+        "power_w": 24.6,
+        "gpu_mem_mib": 3882.0,
+        "sm_mhz": 1230.0,
+        "mem_mhz": 6121.0
+      }
+    ],
+    "ps": [
+      {
+        "ts_ms": 1790011066321.9353,
+        "model": "google/gemma-4-e4b",
+        "status": "processingPrompt",
+        "queued": 0,
+        "parallel": 12,
+        "context_length": 131072
+      },
+      {
+        "ts_ms": 1790011068920.4531,
+        "model": "google/gemma-4-e4b",
+        "status": "generating",
+        "queued": 0,
+        "parallel": 12,
+        "context_length": 131072
+      },
+      {
+        "ts_ms": 1790011070596.7932,
+        "model": "google/gemma-4-e4b",
+        "status": "generating",
+        "queued": 0,
+        "parallel": 12,
+        "context_length": 131072
+      }
+    ],
+    "win": [
+      {
+        "ts_ms": 1790011065954.3381,
+        "llama_cpu_pct": null,
+        "llama_ws_mb": null,
+        "total_cpu_pct": null,
+        "avail_kb": null
+      },
+      {
+        "ts_ms": 1790011068427.527,
+        "llama_cpu_pct": null,
+        "llama_ws_mb": null,
+        "total_cpu_pct": null,
+        "avail_kb": null
+      }
+    ]
+  },
+  "resources": {
+    "gpu_util_max_pct": 26.0,
+    "gpu_util_avg_pct": 14.666666666666666,
+    "power_max_w": 32.06,
+    "power_avg_w": 21.883333333333333,
+    "gpu_mem_max_mib": 3882.0,
+    "ps_states": [
+      {
+        "status": "processingPrompt",
+        "queued": 0,
+        "parallel": 12
+      },
+      {
+        "status": "generating",
+        "queued": 0,
+        "parallel": 12
+      },
+      {
+        "status": "generating",
+        "queued": 0,
+        "parallel": 12
+      }
+    ],
+    "window_samples": 8
+  },
+  "output_txt": "99.txt",
+  "output_first80": "The image displays a smooth, diagonal gradient transitioning from a dark, cool g"
+}

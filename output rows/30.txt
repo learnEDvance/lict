@@ -1,0 +1,9 @@
+```csv
+name,color,price
+Apple,red,1.00
+Banana,yellow,0.50
+Orange,orange,0.75
+Strawberry,blue,2.50
+Mango,green,3.00
+Pineapple,white,4.00
+```

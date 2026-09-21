@@ -1,0 +1,24 @@
+```python
+import re
+
+def is_valid_phone_number(phone_number):
+    """
+    Checks if a given phone number is valid.
+
+    Args:
+        phone_number: The phone number to check.
+
+    Returns:
+        True if the phone number is valid, False otherwise.
+    """
+    try:
+        pattern = r"^\d{10}$"  # Matches 10 digits (including the decimal point)
+        match = re.search(pattern, phone_number)
+        return match.group(0) == "10"
+    except:
+        return False
+
+# Example usage:
+phone_number1 = "123-456-7890"
+phone_number2 = "123-456-7890"
+phone_number3 = "123-456-7890"

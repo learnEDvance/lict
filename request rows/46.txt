@@ -1,0 +1,1 @@
+Write a python list comprehension for squares 1..10.

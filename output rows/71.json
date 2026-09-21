@@ -1,0 +1,77 @@
+{
+  "request_num": 71,
+  "request_files": [
+    "71.txt"
+  ],
+  "has_images": false,
+  "has_text": true,
+  "target_model": "gemma-3-270m-it",
+  "model_switch": {
+    "switched": false,
+    "target": "gemma-3-270m-it",
+    "load_time_seconds": 0,
+    "loaded_before": [
+      "gemma-3-270m-it"
+    ]
+  },
+  "payload": {
+    "model": "gemma-3-270m-it",
+    "stream": true,
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "reasoning_effort": null
+  },
+  "extra": {},
+  "attempts": 1,
+  "t_queued": "2026-09-21T17:15:47.434803+00:00",
+  "t_sent": "2026-09-21T17:15:48.153307+00:00",
+  "t_done": "2026-09-21T17:15:48.419574+00:00",
+  "ok": true,
+  "http_status": 200,
+  "reason": "OK",
+  "headers_ms": 8.707763671875,
+  "ttft_ms": 62.56884765625,
+  "total_ms": 265.831787109375,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 20,
+    "completion_tokens": 27,
+    "total_tokens": 47,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "server_ids": {
+    "id": "chatcmpl-f3diy64x7sw7b5k09t8y9q",
+    "created": 1790010948,
+    "model": "gemma-3-270m-it",
+    "system_fingerprint": "gemma-3-270m-it"
+  },
+  "tokens_per_second_client": 132.83,
+  "resource_samples_during": {
+    "gpu": [],
+    "ps": [
+      {
+        "ts_ms": 1790010948027.55,
+        "model": "gemma-3-270m-it",
+        "status": "idle",
+        "queued": 0,
+        "parallel": 32,
+        "context_length": 32768
+      }
+    ],
+    "win": []
+  },
+  "resources": {
+    "ps_states": [
+      {
+        "status": "idle",
+        "queued": 0,
+        "parallel": 32
+      }
+    ],
+    "window_samples": 1
+  },
+  "output_txt": "71.txt",
+  "output_first80": "The OSI model layer 3 is a network-independent, data-transport layer that provid"
+}

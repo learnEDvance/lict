@@ -1,0 +1,1 @@
+Write a CSV with 3 rows about fruits (name,color,price).

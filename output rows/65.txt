@@ -1,0 +1,1 @@
+A VPN encrypts your internet traffic and routes it through a server located in a different location, masking your IP address and protecting you from online surveillance.

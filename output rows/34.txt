@@ -1,0 +1,10 @@
+```bash
+docker run -d --name web -p 8080:8080 web
+```
+
+**Explanation:**
+
+*   `docker run`: This is the command to start a new container.
+*   `-d`:  This option specifies that the container should be running in detached mode (i.e., not in the background).  This is important for resource management and preventing the container from consuming excessive resources.
+*   `--name web`: This option tells Docker to name the container `web`. You can choose any name you like.
+*   `-p 8080:8080`: This is the port forwarding directive. It tells Docker to forward the port 8080 on the host machine (your host) to the container's port 8080 on the container's machine.  This allows you to access web resources from your host machine using the container's IP address.

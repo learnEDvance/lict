@@ -1,0 +1,1 @@
+A hashmap is a data structure that stores key-value pairs, allowing for efficient retrieval of specific data based on its unique identifier.

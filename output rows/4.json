@@ -1,0 +1,61 @@
+{
+  "request_num": 4,
+  "request_files": [
+    "4.txt"
+  ],
+  "has_images": false,
+  "has_text": true,
+  "target_model": "gemma-3-270m-it",
+  "model_switch": {
+    "switched": false,
+    "target": "gemma-3-270m-it",
+    "load_time_seconds": 0,
+    "loaded_before": [
+      "gemma-3-270m-it"
+    ]
+  },
+  "payload": {
+    "model": "gemma-3-270m-it",
+    "stream": true,
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "reasoning_effort": null
+  },
+  "extra": {},
+  "attempts": 1,
+  "t_queued": "2026-09-21T17:14:06.319991+00:00",
+  "t_sent": "2026-09-21T17:14:07.106708+00:00",
+  "t_done": "2026-09-21T17:14:07.229352+00:00",
+  "ok": true,
+  "http_status": 200,
+  "reason": "OK",
+  "headers_ms": 6.544189453125,
+  "ttft_ms": 67.770751953125,
+  "total_ms": 122.3564453125,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 18,
+    "completion_tokens": 7,
+    "total_tokens": 25,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "server_ids": {
+    "id": "chatcmpl-jb745pwof686lvxbekyopx",
+    "created": 1790010847,
+    "model": "gemma-3-270m-it",
+    "system_fingerprint": "gemma-3-270m-it"
+  },
+  "tokens_per_second_client": 128.24,
+  "resource_samples_during": {
+    "gpu": [],
+    "ps": [],
+    "win": []
+  },
+  "resources": {
+    "window_samples": 0
+  },
+  "output_txt": "4.txt",
+  "output_first80": "Jupiter, Saturn, and Uranus"
+}

@@ -1,0 +1,1 @@
+Latency refers to the delay or time it takes for a communication signal to reach its destination, which can be measured in milliseconds or even microseconds.

@@ -1,0 +1,101 @@
+{
+  "request_num": 90,
+  "request_files": [
+    "90.txt"
+  ],
+  "has_images": false,
+  "has_text": true,
+  "target_model": "gemma-3-270m-it",
+  "model_switch": {
+    "switched": false,
+    "target": "gemma-3-270m-it",
+    "load_time_seconds": 0,
+    "loaded_before": [
+      "gemma-3-270m-it"
+    ]
+  },
+  "payload": {
+    "model": "gemma-3-270m-it",
+    "stream": true,
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "reasoning_effort": null
+  },
+  "extra": {},
+  "attempts": 1,
+  "t_queued": "2026-09-21T17:16:20.914963+00:00",
+  "t_sent": "2026-09-21T17:16:21.601327+00:00",
+  "t_done": "2026-09-21T17:16:23.176795+00:00",
+  "ok": true,
+  "http_status": 200,
+  "reason": "OK",
+  "headers_ms": 5.66015625,
+  "ttft_ms": 57.892333984375,
+  "total_ms": 1575.26318359375,
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 24,
+    "completion_tokens": 200,
+    "total_tokens": 224,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "server_ids": {
+    "id": "chatcmpl-c0fh9kwsvpray58urnjczn",
+    "created": 1790010981,
+    "model": "gemma-3-270m-it",
+    "system_fingerprint": "gemma-3-270m-it"
+  },
+  "tokens_per_second_client": 131.81,
+  "resource_samples_during": {
+    "gpu": [
+      {
+        "ts_ms": 1790010981395.6162,
+        "nvgpu_ts": "2026/09/21 22:46:21.376",
+        "gpu_util_pct": 5.0,
+        "gpu_mem_util_pct": 0.0,
+        "power_w": 25.85,
+        "gpu_mem_mib": 1352.0,
+        "sm_mhz": 2047.0,
+        "mem_mhz": 6121.0
+      }
+    ],
+    "ps": [
+      {
+        "ts_ms": 1790010981977.7256,
+        "model": "gemma-3-270m-it",
+        "status": "generating",
+        "queued": 0,
+        "parallel": 32,
+        "context_length": 32768
+      }
+    ],
+    "win": [
+      {
+        "ts_ms": 1790010982102.2668,
+        "llama_cpu_pct": null,
+        "llama_ws_mb": null,
+        "total_cpu_pct": null,
+        "avail_kb": null
+      }
+    ]
+  },
+  "resources": {
+    "gpu_util_max_pct": 5.0,
+    "gpu_util_avg_pct": 5.0,
+    "power_max_w": 25.85,
+    "power_avg_w": 25.85,
+    "gpu_mem_max_mib": 1352.0,
+    "ps_states": [
+      {
+        "status": "generating",
+        "queued": 0,
+        "parallel": 32
+      }
+    ],
+    "window_samples": 3
+  },
+  "output_txt": "90.txt",
+  "output_first80": "```awk\nawk 'print($0, 1) { print ($0, 2) }'\n```\n\n**Explanation:**\n\n*   `awk`: Th"
+}

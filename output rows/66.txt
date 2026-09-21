@@ -1,0 +1,17 @@
+```nginx
+server {
+    listen 127.0.0.1;
+    server_name localhost;
+
+    location /app/ {
+        proxy_pass http://localhost:3000;
+    }
+}
+```
+
+**Explanation:**
+
+* **`server { ... }`**: This defines a server block in your Nginx configuration file.
+* **`listen 127.0.0.1;`**:  This tells Nginx to listen for incoming connections on port 127.0.0.1 (the internal IP address of your server).
+* **`server_name localhost;`**: This specifies that the server should be accessible from the same machine as the Nginx server.
+* **`location /app/ { ... }`**: This is a block that defines how to handle requests to `/app/`.  It's crucial for proper routing and handling requests from different locations

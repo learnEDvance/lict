@@ -1,0 +1,1 @@
+Write an HTTP GET request in curl for https://example.com.

@@ -1,0 +1,21 @@
+```dockerfile
+FROM redis:latest
+
+# Set the Redis instance to the latest version
+RUN apt-get update && apt-get install -y redis-server
+
+# Install the Redis server
+RUN pip install redis-server
+
+# Optional:  Set a default Redis instance if needed
+# RUN redis-server default
+
+# Example usage:
+CMD ["redis", "serve", "index"]
+```
+
+**Explanation:**
+
+1. **`FROM redis:latest`**: This line specifies the Docker image to use. `redis:latest` is a recommended version for new projects, as it includes the latest available Redis server and its dependencies.  You can choose a different version if you prefer.
+
+2. **`RUN apt-get update && apt-get install -y redis-server`**: This command updates the package lists and installs the `redis-server` package.  The `-y` flag automatically answers "yes" to prompts, making it easier to

@@ -1,0 +1,174 @@
+{
+  "request_num": 97,
+  "request_files": [
+    "97.png",
+    "97.txt"
+  ],
+  "has_images": true,
+  "has_text": true,
+  "target_model": "google/gemma-4-e4b",
+  "model_switch": {
+    "switched": false,
+    "target": "google/gemma-4-e4b",
+    "load_time_seconds": 0,
+    "loaded_before": [
+      "google/gemma-4-e4b"
+    ]
+  },
+  "payload": {
+    "model": "google/gemma-4-e4b",
+    "stream": true,
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "reasoning_effort": "none"
+  },
+  "extra": {
+    "routed_to_vision": true
+  },
+  "attempts": 1,
+  "t_queued": "2026-09-21T17:17:30.092534+00:00",
+  "t_sent": "2026-09-21T17:17:30.865970+00:00",
+  "t_done": "2026-09-21T17:17:37.598896+00:00",
+  "ok": true,
+  "http_status": 200,
+  "reason": "OK",
+  "headers_ms": 7.374755859375,
+  "ttft_ms": 3012.251220703125,
+  "total_ms": 6732.470947265625,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 104,
+    "completion_tokens": 29,
+    "total_tokens": 133,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "server_ids": {
+    "id": "chatcmpl-8qcpmv9a53ltygmdbtmal",
+    "created": 1790011050,
+    "model": "google/gemma-4-e4b",
+    "system_fingerprint": "google/gemma-4-e4b"
+  },
+  "tokens_per_second_client": 7.8,
+  "resource_samples_during": {
+    "gpu": [
+      {
+        "ts_ms": 1790011051575.344,
+        "nvgpu_ts": "2026/09/21 22:47:31.552",
+        "gpu_util_pct": 2.0,
+        "gpu_mem_util_pct": 0.0,
+        "power_w": 8.49,
+        "gpu_mem_mib": 3859.0,
+        "sm_mhz": 352.0,
+        "mem_mhz": 5501.0
+      },
+      {
+        "ts_ms": 1790011053498.53,
+        "nvgpu_ts": "2026/09/21 22:47:33.483",
+        "gpu_util_pct": 100.0,
+        "gpu_mem_util_pct": 0.0,
+        "power_w": 19.84,
+        "gpu_mem_mib": 3859.0,
+        "sm_mhz": 2062.0,
+        "mem_mhz": 6121.0
+      },
+      {
+        "ts_ms": 1790011055559.753,
+        "nvgpu_ts": "2026/09/21 22:47:35.542",
+        "gpu_util_pct": 12.0,
+        "gpu_mem_util_pct": 10.0,
+        "power_w": 26.7,
+        "gpu_mem_mib": 3859.0,
+        "sm_mhz": 2062.0,
+        "mem_mhz": 6121.0
+      },
+      {
+        "ts_ms": 1790011057552.9087,
+        "nvgpu_ts": "2026/09/21 22:47:37.523",
+        "gpu_util_pct": 19.0,
+        "gpu_mem_util_pct": 8.0,
+        "power_w": 11.35,
+        "gpu_mem_mib": 3859.0,
+        "sm_mhz": 607.0,
+        "mem_mhz": 5501.0
+      }
+    ],
+    "ps": [
+      {
+        "ts_ms": 1790011052789.1084,
+        "model": "google/gemma-4-e4b",
+        "status": "processingPrompt",
+        "queued": 0,
+        "parallel": 12,
+        "context_length": 131072
+      },
+      {
+        "ts_ms": 1790011054545.412,
+        "model": "google/gemma-4-e4b",
+        "status": "generating",
+        "queued": 0,
+        "parallel": 12,
+        "context_length": 131072
+      },
+      {
+        "ts_ms": 1790011056691.0322,
+        "model": "google/gemma-4-e4b",
+        "status": "generating",
+        "queued": 0,
+        "parallel": 12,
+        "context_length": 131072
+      }
+    ],
+    "win": [
+      {
+        "ts_ms": 1790011050678.95,
+        "llama_cpu_pct": null,
+        "llama_ws_mb": null,
+        "total_cpu_pct": null,
+        "avail_kb": null
+      },
+      {
+        "ts_ms": 1790011053155.6082,
+        "llama_cpu_pct": null,
+        "llama_ws_mb": null,
+        "total_cpu_pct": null,
+        "avail_kb": null
+      },
+      {
+        "ts_ms": 1790011055657.2822,
+        "llama_cpu_pct": null,
+        "llama_ws_mb": null,
+        "total_cpu_pct": null,
+        "avail_kb": null
+      }
+    ]
+  },
+  "resources": {
+    "gpu_util_max_pct": 100.0,
+    "gpu_util_avg_pct": 33.25,
+    "power_max_w": 26.7,
+    "power_avg_w": 16.595,
+    "gpu_mem_max_mib": 3859.0,
+    "ps_states": [
+      {
+        "status": "processingPrompt",
+        "queued": 0,
+        "parallel": 12
+      },
+      {
+        "status": "generating",
+        "queued": 0,
+        "parallel": 12
+      },
+      {
+        "status": "generating",
+        "queued": 0,
+        "parallel": 12
+      }
+    ],
+    "window_samples": 10
+  },
+  "output_txt": "97.txt",
+  "output_first80": "The image displays a smooth, warm gradient transitioning from bright yellow-oran"
+}

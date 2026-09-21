@@ -1,0 +1,26 @@
+```python
+import re
+
+def extract_email(text):
+    """
+    Extracts email addresses from a given text string.
+
+    Args:
+        text: The input text string.
+
+    Returns:
+        A list of strings, where each string is an email address found in the text.
+        Returns an empty list if no email addresses are found.
+    """
+    try:
+        pattern = r'\b[a-zA-Z0-9\-\s@\w+\.\w+]\b'  # Regular expression for email
+        matches = re.findall(pattern, text)
+        return matches
+    except Exception as e:
+        print(f"Error extracting email addresses: {e}")
+        return []
+
+# Example usage:
+text = "This is a sample text with some emails and phone numbers."
+email_list = extract_email(text)
+print(email_list)

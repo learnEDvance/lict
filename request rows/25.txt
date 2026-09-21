@@ -1,0 +1,1 @@
+Compare RAM and VRAM in 2 sentences.

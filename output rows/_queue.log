@@ -1,0 +1,304 @@
+{"ts": "2026-09-21T17:13:56.143258+00:00", "num": "*", "state": "run_start"}
+{"ts": "2026-09-21T17:13:56.152088+00:00", "num": 1, "state": "queued", "files": ["1.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:02.610917+00:00", "num": 1, "state": "model_switch", "to": "gemma-3-270m-it", "load_time_seconds": 3.475, "unloaded": ["google/gemma-4-e4b"]}
+{"ts": "2026-09-21T17:14:02.621197+00:00", "num": 1, "state": "sending"}
+{"ts": "2026-09-21T17:14:02.740486+00:00", "num": 1, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:02.758694+00:00", "num": 2, "state": "queued", "files": ["2.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:03.508512+00:00", "num": 2, "state": "sending"}
+{"ts": "2026-09-21T17:14:05.112521+00:00", "num": 2, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:05.131566+00:00", "num": 3, "state": "queued", "files": ["3.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:05.907732+00:00", "num": 3, "state": "sending"}
+{"ts": "2026-09-21T17:14:06.292927+00:00", "num": 3, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:06.310710+00:00", "num": 4, "state": "queued", "files": ["4.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:07.099346+00:00", "num": 4, "state": "sending"}
+{"ts": "2026-09-21T17:14:07.229402+00:00", "num": 4, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:07.246408+00:00", "num": 5, "state": "queued", "files": ["5.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:08.095918+00:00", "num": 5, "state": "sending"}
+{"ts": "2026-09-21T17:14:08.480162+00:00", "num": 5, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:08.497565+00:00", "num": 6, "state": "queued", "files": ["6.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:09.202042+00:00", "num": 6, "state": "sending"}
+{"ts": "2026-09-21T17:14:09.629466+00:00", "num": 6, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:09.646557+00:00", "num": 7, "state": "queued", "files": ["7.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:10.374650+00:00", "num": 7, "state": "sending"}
+{"ts": "2026-09-21T17:14:10.773610+00:00", "num": 7, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:10.795956+00:00", "num": 8, "state": "queued", "files": ["8.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:11.536532+00:00", "num": 8, "state": "sending"}
+{"ts": "2026-09-21T17:14:13.119486+00:00", "num": 8, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:13.139013+00:00", "num": 9, "state": "queued", "files": ["9.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:13.931726+00:00", "num": 9, "state": "sending"}
+{"ts": "2026-09-21T17:14:14.043970+00:00", "num": 9, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:14.062745+00:00", "num": 10, "state": "queued", "files": ["10.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:14.758864+00:00", "num": 10, "state": "sending"}
+{"ts": "2026-09-21T17:14:15.513820+00:00", "num": 10, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:15.528943+00:00", "num": 11, "state": "queued", "files": ["11.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:16.267264+00:00", "num": 11, "state": "sending"}
+{"ts": "2026-09-21T17:14:16.617071+00:00", "num": 11, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:16.636221+00:00", "num": 12, "state": "queued", "files": ["12.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:17.372547+00:00", "num": 12, "state": "sending"}
+{"ts": "2026-09-21T17:14:17.765290+00:00", "num": 12, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:17.782532+00:00", "num": 13, "state": "queued", "files": ["13.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:18.496532+00:00", "num": 13, "state": "sending"}
+{"ts": "2026-09-21T17:14:20.093228+00:00", "num": 13, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:20.116060+00:00", "num": 14, "state": "queued", "files": ["14.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:20.885818+00:00", "num": 14, "state": "sending"}
+{"ts": "2026-09-21T17:14:20.984767+00:00", "num": 14, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:21.001832+00:00", "num": 15, "state": "queued", "files": ["15.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:21.696086+00:00", "num": 15, "state": "sending"}
+{"ts": "2026-09-21T17:14:21.934484+00:00", "num": 15, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:21.953322+00:00", "num": 16, "state": "queued", "files": ["16.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:22.688342+00:00", "num": 16, "state": "sending"}
+{"ts": "2026-09-21T17:14:22.773296+00:00", "num": 16, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:22.789220+00:00", "num": 17, "state": "queued", "files": ["17.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:23.482482+00:00", "num": 17, "state": "sending"}
+{"ts": "2026-09-21T17:14:25.187673+00:00", "num": 17, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:25.208392+00:00", "num": 18, "state": "queued", "files": ["18.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:25.944983+00:00", "num": 18, "state": "sending"}
+{"ts": "2026-09-21T17:14:26.238381+00:00", "num": 18, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:26.270205+00:00", "num": 19, "state": "queued", "files": ["19.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:27.023510+00:00", "num": 19, "state": "sending"}
+{"ts": "2026-09-21T17:14:27.147888+00:00", "num": 19, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:27.166088+00:00", "num": 20, "state": "queued", "files": ["20.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:27.894907+00:00", "num": 20, "state": "sending"}
+{"ts": "2026-09-21T17:14:29.468908+00:00", "num": 20, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:29.489614+00:00", "num": 21, "state": "queued", "files": ["21.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:30.205161+00:00", "num": 21, "state": "sending"}
+{"ts": "2026-09-21T17:14:30.400171+00:00", "num": 21, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:30.418980+00:00", "num": 22, "state": "queued", "files": ["22.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:31.136952+00:00", "num": 22, "state": "sending"}
+{"ts": "2026-09-21T17:14:32.697514+00:00", "num": 22, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:32.712783+00:00", "num": 23, "state": "queued", "files": ["23.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:33.445316+00:00", "num": 23, "state": "sending"}
+{"ts": "2026-09-21T17:14:33.597799+00:00", "num": 23, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:33.617553+00:00", "num": 24, "state": "queued", "files": ["24.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:34.311696+00:00", "num": 24, "state": "sending"}
+{"ts": "2026-09-21T17:14:34.419959+00:00", "num": 24, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:34.438483+00:00", "num": 25, "state": "queued", "files": ["25.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:35.136222+00:00", "num": 25, "state": "sending"}
+{"ts": "2026-09-21T17:14:35.739822+00:00", "num": 25, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:35.759150+00:00", "num": 26, "state": "queued", "files": ["26.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:36.557632+00:00", "num": 26, "state": "sending"}
+{"ts": "2026-09-21T17:14:38.153535+00:00", "num": 26, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:38.171953+00:00", "num": 27, "state": "queued", "files": ["27.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:38.922354+00:00", "num": 27, "state": "sending"}
+{"ts": "2026-09-21T17:14:39.122354+00:00", "num": 27, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:39.139630+00:00", "num": 28, "state": "queued", "files": ["28.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:39.854911+00:00", "num": 28, "state": "sending"}
+{"ts": "2026-09-21T17:14:41.493740+00:00", "num": 28, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:41.514579+00:00", "num": 29, "state": "queued", "files": ["29.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:42.221713+00:00", "num": 29, "state": "sending"}
+{"ts": "2026-09-21T17:14:42.751823+00:00", "num": 29, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:42.769369+00:00", "num": 30, "state": "queued", "files": ["30.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:43.471151+00:00", "num": 30, "state": "sending"}
+{"ts": "2026-09-21T17:14:44.038860+00:00", "num": 30, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:44.056403+00:00", "num": 31, "state": "queued", "files": ["31.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:44.777494+00:00", "num": 31, "state": "sending"}
+{"ts": "2026-09-21T17:14:45.056641+00:00", "num": 31, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:45.074673+00:00", "num": 32, "state": "queued", "files": ["32.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:45.805449+00:00", "num": 32, "state": "sending"}
+{"ts": "2026-09-21T17:14:47.386183+00:00", "num": 32, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:47.401921+00:00", "num": 33, "state": "queued", "files": ["33.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:48.117305+00:00", "num": 33, "state": "sending"}
+{"ts": "2026-09-21T17:14:48.210118+00:00", "num": 33, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:48.227041+00:00", "num": 34, "state": "queued", "files": ["34.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:48.932704+00:00", "num": 34, "state": "sending"}
+{"ts": "2026-09-21T17:14:50.517416+00:00", "num": 34, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:50.537466+00:00", "num": 35, "state": "queued", "files": ["35.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:51.299048+00:00", "num": 35, "state": "sending"}
+{"ts": "2026-09-21T17:14:51.537412+00:00", "num": 35, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:51.560737+00:00", "num": 36, "state": "queued", "files": ["36.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:52.266875+00:00", "num": 36, "state": "sending"}
+{"ts": "2026-09-21T17:14:52.469441+00:00", "num": 36, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:52.490096+00:00", "num": 37, "state": "queued", "files": ["37.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:53.210775+00:00", "num": 37, "state": "sending"}
+{"ts": "2026-09-21T17:14:54.272555+00:00", "num": 37, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:54.289894+00:00", "num": 38, "state": "queued", "files": ["38.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:55.077561+00:00", "num": 38, "state": "sending"}
+{"ts": "2026-09-21T17:14:56.690373+00:00", "num": 38, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:56.709577+00:00", "num": 39, "state": "queued", "files": ["39.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:57.483903+00:00", "num": 39, "state": "sending"}
+{"ts": "2026-09-21T17:14:57.616108+00:00", "num": 39, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:14:57.633954+00:00", "num": 40, "state": "queued", "files": ["40.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:14:58.356966+00:00", "num": 40, "state": "sending"}
+{"ts": "2026-09-21T17:15:00.012879+00:00", "num": 40, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:00.033424+00:00", "num": 41, "state": "queued", "files": ["41.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:00.786169+00:00", "num": 41, "state": "sending"}
+{"ts": "2026-09-21T17:15:00.868540+00:00", "num": 41, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:00.886658+00:00", "num": 42, "state": "queued", "files": ["42.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:01.646014+00:00", "num": 42, "state": "sending"}
+{"ts": "2026-09-21T17:15:02.874250+00:00", "num": 42, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:02.890095+00:00", "num": 43, "state": "queued", "files": ["43.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:03.694253+00:00", "num": 43, "state": "sending"}
+{"ts": "2026-09-21T17:15:03.976349+00:00", "num": 43, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:03.998741+00:00", "num": 44, "state": "queued", "files": ["44.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:04.745484+00:00", "num": 44, "state": "sending"}
+{"ts": "2026-09-21T17:15:05.221664+00:00", "num": 44, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:05.240296+00:00", "num": 45, "state": "queued", "files": ["45.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:06.000299+00:00", "num": 45, "state": "sending"}
+{"ts": "2026-09-21T17:15:06.289654+00:00", "num": 45, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:06.306213+00:00", "num": 46, "state": "queued", "files": ["46.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:07.126855+00:00", "num": 46, "state": "sending"}
+{"ts": "2026-09-21T17:15:08.746498+00:00", "num": 46, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:08.764587+00:00", "num": 47, "state": "queued", "files": ["47.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:09.539606+00:00", "num": 47, "state": "sending"}
+{"ts": "2026-09-21T17:15:09.864988+00:00", "num": 47, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:09.882767+00:00", "num": 48, "state": "queued", "files": ["48.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:10.574404+00:00", "num": 48, "state": "sending"}
+{"ts": "2026-09-21T17:15:12.183828+00:00", "num": 48, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:12.207499+00:00", "num": 49, "state": "queued", "files": ["49.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:12.951580+00:00", "num": 49, "state": "sending"}
+{"ts": "2026-09-21T17:15:13.225021+00:00", "num": 49, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:13.245563+00:00", "num": 50, "state": "queued", "files": ["50.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:14.073399+00:00", "num": 50, "state": "sending"}
+{"ts": "2026-09-21T17:15:15.681869+00:00", "num": 50, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:15.702982+00:00", "num": 51, "state": "queued", "files": ["51.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:16.497313+00:00", "num": 51, "state": "sending"}
+{"ts": "2026-09-21T17:15:16.883010+00:00", "num": 51, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:16.900532+00:00", "num": 52, "state": "queued", "files": ["52.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:17.654626+00:00", "num": 52, "state": "sending"}
+{"ts": "2026-09-21T17:15:17.936639+00:00", "num": 52, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:17.962602+00:00", "num": 53, "state": "queued", "files": ["53.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:18.708551+00:00", "num": 53, "state": "sending"}
+{"ts": "2026-09-21T17:15:18.886884+00:00", "num": 53, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:18.904518+00:00", "num": 54, "state": "queued", "files": ["54.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:19.623330+00:00", "num": 54, "state": "sending"}
+{"ts": "2026-09-21T17:15:19.845345+00:00", "num": 54, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:19.864607+00:00", "num": 55, "state": "queued", "files": ["55.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:20.604223+00:00", "num": 55, "state": "sending"}
+{"ts": "2026-09-21T17:15:20.721138+00:00", "num": 55, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:20.741069+00:00", "num": 56, "state": "queued", "files": ["56.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:21.467196+00:00", "num": 56, "state": "sending"}
+{"ts": "2026-09-21T17:15:23.102440+00:00", "num": 56, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:23.116686+00:00", "num": 57, "state": "queued", "files": ["57.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:23.826130+00:00", "num": 57, "state": "sending"}
+{"ts": "2026-09-21T17:15:23.921826+00:00", "num": 57, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:23.943817+00:00", "num": 58, "state": "queued", "files": ["58.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:24.705981+00:00", "num": 58, "state": "sending"}
+{"ts": "2026-09-21T17:15:26.431627+00:00", "num": 58, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:26.452467+00:00", "num": 59, "state": "queued", "files": ["59.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:27.271298+00:00", "num": 59, "state": "sending"}
+{"ts": "2026-09-21T17:15:27.565130+00:00", "num": 59, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:27.586235+00:00", "num": 60, "state": "queued", "files": ["60.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:28.343187+00:00", "num": 60, "state": "sending"}
+{"ts": "2026-09-21T17:15:29.977360+00:00", "num": 60, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:29.998542+00:00", "num": 61, "state": "queued", "files": ["61.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:30.777993+00:00", "num": 61, "state": "sending"}
+{"ts": "2026-09-21T17:15:31.027906+00:00", "num": 61, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:31.045027+00:00", "num": 62, "state": "queued", "files": ["62.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:31.782953+00:00", "num": 62, "state": "sending"}
+{"ts": "2026-09-21T17:15:33.387819+00:00", "num": 62, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:33.408329+00:00", "num": 63, "state": "queued", "files": ["63.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:34.182591+00:00", "num": 63, "state": "sending"}
+{"ts": "2026-09-21T17:15:34.332005+00:00", "num": 63, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:34.349040+00:00", "num": 64, "state": "queued", "files": ["64.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:35.080920+00:00", "num": 64, "state": "sending"}
+{"ts": "2026-09-21T17:15:36.734005+00:00", "num": 64, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:36.751492+00:00", "num": 65, "state": "queued", "files": ["65.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:37.584075+00:00", "num": 65, "state": "sending"}
+{"ts": "2026-09-21T17:15:37.887362+00:00", "num": 65, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:37.908391+00:00", "num": 66, "state": "queued", "files": ["66.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:38.692758+00:00", "num": 66, "state": "sending"}
+{"ts": "2026-09-21T17:15:40.335257+00:00", "num": 66, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:40.352324+00:00", "num": 67, "state": "queued", "files": ["67.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:41.084432+00:00", "num": 67, "state": "sending"}
+{"ts": "2026-09-21T17:15:41.634061+00:00", "num": 67, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:41.649648+00:00", "num": 68, "state": "queued", "files": ["68.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:42.403654+00:00", "num": 68, "state": "sending"}
+{"ts": "2026-09-21T17:15:44.030497+00:00", "num": 68, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:44.047362+00:00", "num": 69, "state": "queued", "files": ["69.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:44.743485+00:00", "num": 69, "state": "sending"}
+{"ts": "2026-09-21T17:15:44.870277+00:00", "num": 69, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:44.887275+00:00", "num": 70, "state": "queued", "files": ["70.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:45.684917+00:00", "num": 70, "state": "sending"}
+{"ts": "2026-09-21T17:15:47.401141+00:00", "num": 70, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:47.422144+00:00", "num": 71, "state": "queued", "files": ["71.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:48.145352+00:00", "num": 71, "state": "sending"}
+{"ts": "2026-09-21T17:15:48.419781+00:00", "num": 71, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:48.435990+00:00", "num": 72, "state": "queued", "files": ["72.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:49.100255+00:00", "num": 72, "state": "sending"}
+{"ts": "2026-09-21T17:15:50.782857+00:00", "num": 72, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:50.808061+00:00", "num": 73, "state": "queued", "files": ["73.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:51.567754+00:00", "num": 73, "state": "sending"}
+{"ts": "2026-09-21T17:15:51.825376+00:00", "num": 73, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:51.846905+00:00", "num": 74, "state": "queued", "files": ["74.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:52.533681+00:00", "num": 74, "state": "sending"}
+{"ts": "2026-09-21T17:15:54.117347+00:00", "num": 74, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:54.135300+00:00", "num": 75, "state": "queued", "files": ["75.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:54.837024+00:00", "num": 75, "state": "sending"}
+{"ts": "2026-09-21T17:15:54.959831+00:00", "num": 75, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:54.977211+00:00", "num": 76, "state": "queued", "files": ["76.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:55.704630+00:00", "num": 76, "state": "sending"}
+{"ts": "2026-09-21T17:15:57.326241+00:00", "num": 76, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:57.344746+00:00", "num": 77, "state": "queued", "files": ["77.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:58.083945+00:00", "num": 77, "state": "sending"}
+{"ts": "2026-09-21T17:15:58.167199+00:00", "num": 77, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:15:58.186927+00:00", "num": 78, "state": "queued", "files": ["78.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:15:58.862472+00:00", "num": 78, "state": "sending"}
+{"ts": "2026-09-21T17:16:00.431099+00:00", "num": 78, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:16:00.447561+00:00", "num": 79, "state": "queued", "files": ["79.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:16:01.146790+00:00", "num": 79, "state": "sending"}
+{"ts": "2026-09-21T17:16:01.435045+00:00", "num": 79, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:16:01.451253+00:00", "num": 80, "state": "queued", "files": ["80.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:16:02.190244+00:00", "num": 80, "state": "sending"}
+{"ts": "2026-09-21T17:16:03.780104+00:00", "num": 80, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:16:03.798143+00:00", "num": 81, "state": "queued", "files": ["81.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:16:04.524548+00:00", "num": 81, "state": "sending"}
+{"ts": "2026-09-21T17:16:04.603558+00:00", "num": 81, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:16:04.619389+00:00", "num": 82, "state": "queued", "files": ["82.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:16:05.417303+00:00", "num": 82, "state": "sending"}
+{"ts": "2026-09-21T17:16:07.819888+00:00", "num": 82, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:16:07.836121+00:00", "num": 83, "state": "queued", "files": ["83.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:16:08.574603+00:00", "num": 83, "state": "sending"}
+{"ts": "2026-09-21T17:16:09.916561+00:00", "num": 83, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:16:09.939768+00:00", "num": 84, "state": "queued", "files": ["84.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:16:10.680352+00:00", "num": 84, "state": "sending"}
+{"ts": "2026-09-21T17:16:13.604789+00:00", "num": 84, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:16:13.622443+00:00", "num": 85, "state": "queued", "files": ["85.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:16:14.420028+00:00", "num": 85, "state": "sending"}
+{"ts": "2026-09-21T17:16:14.514323+00:00", "num": 85, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:16:14.529562+00:00", "num": 86, "state": "queued", "files": ["86.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:16:15.222777+00:00", "num": 86, "state": "sending"}
+{"ts": "2026-09-21T17:16:16.786131+00:00", "num": 86, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:16:16.803887+00:00", "num": 87, "state": "queued", "files": ["87.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:16:17.576404+00:00", "num": 87, "state": "sending"}
+{"ts": "2026-09-21T17:16:17.724193+00:00", "num": 87, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:16:17.741550+00:00", "num": 88, "state": "queued", "files": ["88.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:16:18.475757+00:00", "num": 88, "state": "sending"}
+{"ts": "2026-09-21T17:16:20.058478+00:00", "num": 88, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:16:20.076467+00:00", "num": 89, "state": "queued", "files": ["89.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:16:20.806466+00:00", "num": 89, "state": "sending"}
+{"ts": "2026-09-21T17:16:20.889964+00:00", "num": 89, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:16:20.907038+00:00", "num": 90, "state": "queued", "files": ["90.txt"], "target_model": "gemma-3-270m-it"}
+{"ts": "2026-09-21T17:16:21.592333+00:00", "num": 90, "state": "sending"}
+{"ts": "2026-09-21T17:16:23.177044+00:00", "num": 90, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:16:23.193564+00:00", "num": 91, "state": "queued", "files": ["91.png"], "target_model": "google/gemma-4-e4b"}
+{"ts": "2026-09-21T17:16:44.783858+00:00", "num": 91, "state": "model_switch", "to": "google/gemma-4-e4b", "load_time_seconds": 19.774, "unloaded": ["gemma-3-270m-it"]}
+{"ts": "2026-09-21T17:16:44.800344+00:00", "num": 91, "state": "sending"}
+{"ts": "2026-09-21T17:16:51.251356+00:00", "num": 91, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:16:51.270543+00:00", "num": 92, "state": "queued", "files": ["92.png"], "target_model": "google/gemma-4-e4b"}
+{"ts": "2026-09-21T17:16:52.055167+00:00", "num": 92, "state": "sending"}
+{"ts": "2026-09-21T17:16:58.604457+00:00", "num": 92, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:16:58.631394+00:00", "num": 93, "state": "queued", "files": ["93.png"], "target_model": "google/gemma-4-e4b"}
+{"ts": "2026-09-21T17:16:59.467366+00:00", "num": 93, "state": "sending"}
+{"ts": "2026-09-21T17:17:05.754565+00:00", "num": 93, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:17:05.777322+00:00", "num": 94, "state": "queued", "files": ["94.png"], "target_model": "google/gemma-4-e4b"}
+{"ts": "2026-09-21T17:17:06.557364+00:00", "num": 94, "state": "sending"}
+{"ts": "2026-09-21T17:17:15.056122+00:00", "num": 94, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:17:15.076940+00:00", "num": 95, "state": "queued", "files": ["95.png"], "target_model": "google/gemma-4-e4b"}
+{"ts": "2026-09-21T17:17:16.265803+00:00", "num": 95, "state": "sending"}
+{"ts": "2026-09-21T17:17:23.294454+00:00", "num": 95, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:17:23.318287+00:00", "num": 96, "state": "queued", "files": ["96.png", "96.txt"], "target_model": "google/gemma-4-e4b"}
+{"ts": "2026-09-21T17:17:24.134362+00:00", "num": 96, "state": "sending"}
+{"ts": "2026-09-21T17:17:30.062081+00:00", "num": 96, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:17:30.082317+00:00", "num": 97, "state": "queued", "files": ["97.png", "97.txt"], "target_model": "google/gemma-4-e4b"}
+{"ts": "2026-09-21T17:17:30.857450+00:00", "num": 97, "state": "sending"}
+{"ts": "2026-09-21T17:17:37.599241+00:00", "num": 97, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:17:37.620353+00:00", "num": 98, "state": "queued", "files": ["98.png", "98.txt"], "target_model": "google/gemma-4-e4b"}
+{"ts": "2026-09-21T17:17:38.537585+00:00", "num": 98, "state": "sending"}
+{"ts": "2026-09-21T17:17:44.160347+00:00", "num": 98, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:17:44.178935+00:00", "num": 99, "state": "queued", "files": ["99.png", "99.txt"], "target_model": "google/gemma-4-e4b"}
+{"ts": "2026-09-21T17:17:45.006998+00:00", "num": 99, "state": "sending"}
+{"ts": "2026-09-21T17:17:51.033099+00:00", "num": 99, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:17:51.047515+00:00", "num": 100, "state": "queued", "files": ["100.png", "100.txt"], "target_model": "google/gemma-4-e4b"}
+{"ts": "2026-09-21T17:17:51.631307+00:00", "num": 100, "state": "sending"}
+{"ts": "2026-09-21T17:17:58.460997+00:00", "num": 100, "state": "done", "http": 200, "ok": true}
+{"ts": "2026-09-21T17:17:58.477422+00:00", "num": "*", "state": "run_end"}

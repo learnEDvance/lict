@@ -1,0 +1,1 @@
+Write a SQL query to get the top 5 paying customers.

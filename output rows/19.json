@@ -1,0 +1,61 @@
+{
+  "request_num": 19,
+  "request_files": [
+    "19.txt"
+  ],
+  "has_images": false,
+  "has_text": true,
+  "target_model": "gemma-3-270m-it",
+  "model_switch": {
+    "switched": false,
+    "target": "gemma-3-270m-it",
+    "load_time_seconds": 0,
+    "loaded_before": [
+      "gemma-3-270m-it"
+    ]
+  },
+  "payload": {
+    "model": "gemma-3-270m-it",
+    "stream": true,
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "reasoning_effort": null
+  },
+  "extra": {},
+  "attempts": 1,
+  "t_queued": "2026-09-21T17:14:26.278937+00:00",
+  "t_sent": "2026-09-21T17:14:27.030977+00:00",
+  "t_done": "2026-09-21T17:14:27.147831+00:00",
+  "ok": true,
+  "http_status": 200,
+  "reason": "OK",
+  "headers_ms": 6.13330078125,
+  "ttft_ms": 46.25244140625,
+  "total_ms": 116.655517578125,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 18,
+    "completion_tokens": 10,
+    "total_tokens": 28,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "server_ids": {
+    "id": "chatcmpl-cg83rsrd45b3ldlhsd9ypu",
+    "created": 1790010867,
+    "model": "gemma-3-270m-it",
+    "system_fingerprint": "gemma-3-270m-it"
+  },
+  "tokens_per_second_client": 142.04,
+  "resource_samples_during": {
+    "gpu": [],
+    "ps": [],
+    "win": []
+  },
+  "resources": {
+    "window_samples": 0
+  },
+  "output_txt": "19.txt",
+  "output_first80": "HTTP stands for Hypertext Transfer Protocol.\n"
+}

@@ -1,0 +1,101 @@
+{
+  "request_num": 2,
+  "request_files": [
+    "2.txt"
+  ],
+  "has_images": false,
+  "has_text": true,
+  "target_model": "gemma-3-270m-it",
+  "model_switch": {
+    "switched": false,
+    "target": "gemma-3-270m-it",
+    "load_time_seconds": 0,
+    "loaded_before": [
+      "gemma-3-270m-it"
+    ]
+  },
+  "payload": {
+    "model": "gemma-3-270m-it",
+    "stream": true,
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "reasoning_effort": null
+  },
+  "extra": {},
+  "attempts": 1,
+  "t_queued": "2026-09-21T17:14:02.766584+00:00",
+  "t_sent": "2026-09-21T17:14:03.515647+00:00",
+  "t_done": "2026-09-21T17:14:05.112301+00:00",
+  "ok": true,
+  "http_status": 200,
+  "reason": "OK",
+  "headers_ms": 8.463134765625,
+  "ttft_ms": 61.652099609375,
+  "total_ms": 1596.3486328125,
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 20,
+    "completion_tokens": 200,
+    "total_tokens": 220,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "server_ids": {
+    "id": "chatcmpl-uv6cw06nvlcehepbvjqjte",
+    "created": 1790010843,
+    "model": "gemma-3-270m-it",
+    "system_fingerprint": "gemma-3-270m-it"
+  },
+  "tokens_per_second_client": 130.32,
+  "resource_samples_during": {
+    "gpu": [
+      {
+        "ts_ms": 1790010843397.7515,
+        "nvgpu_ts": "2026/09/21 22:44:03.378",
+        "gpu_util_pct": 0.0,
+        "gpu_mem_util_pct": 0.0,
+        "power_w": 13.25,
+        "gpu_mem_mib": 1335.0,
+        "sm_mhz": 1500.0,
+        "mem_mhz": 6121.0
+      }
+    ],
+    "ps": [
+      {
+        "ts_ms": 1790010844079.694,
+        "model": "gemma-3-270m-it",
+        "status": "generating",
+        "queued": 0,
+        "parallel": 32,
+        "context_length": 32768
+      }
+    ],
+    "win": [
+      {
+        "ts_ms": 1790010843490.6929,
+        "llama_cpu_pct": null,
+        "llama_ws_mb": null,
+        "total_cpu_pct": null,
+        "avail_kb": null
+      }
+    ]
+  },
+  "resources": {
+    "gpu_util_max_pct": 0.0,
+    "gpu_util_avg_pct": 0.0,
+    "power_max_w": 13.25,
+    "power_avg_w": 13.25,
+    "gpu_mem_max_mib": 1335.0,
+    "ps_states": [
+      {
+        "status": "generating",
+        "queued": 0,
+        "parallel": 32
+      }
+    ],
+    "window_samples": 3
+  },
+  "output_txt": "2.txt",
+  "output_first80": "```python\ndef fibonacci(n):\n    \"\"\"\n    Calculates the nth Fibonacci number usin"
+}

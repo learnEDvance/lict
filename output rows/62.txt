@@ -1,0 +1,17 @@
+```javascript
+function addNumbers(num1, num2) {
+  return num1 + num2;
+}
+
+// Example usage:
+let result = addNumbers(5, 3); // Adds 5 and 3 to the result
+console.log(result); // Output: 8
+```
+
+**Explanation:**
+
+1. **`function addNumbers(num1, num2)`:** This defines a function named `addNumbers` that takes two arguments, `num1` and `num2`, which are the numbers you want to add.
+
+2. **`return num1 + num2;`:**  This is the core of the function. It calculates the sum of the two input numbers and returns it as a value.
+
+3. **`let result = addNumbers(5, 3);`:** This line calls the `addNumbers` function with the values 5 and 3. The returned value (which is 

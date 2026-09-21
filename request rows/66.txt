@@ -1,0 +1,1 @@
+Write an nginx config line to proxy /app to localhost:3000.

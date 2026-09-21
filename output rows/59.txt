@@ -1,0 +1,1 @@
+An API is a standardized, reusable interface for interacting with a system or service, allowing developers to build custom applications and functionalities without writing code.

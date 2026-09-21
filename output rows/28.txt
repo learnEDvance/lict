@@ -1,0 +1,21 @@
+```bash
+git reset --hard <commit_hash>
+```
+
+**Explanation:**
+
+*   `git reset`: This is the core command for undoing changes.
+*   `--hard`:  This option tells Git to *force* the change to be undone, even if it's a small change.  It's generally recommended to use `--hard` unless you have a specific reason to use `--soft`.
+*   `<commit_hash>`: Replace this with the actual commit hash of the file you want to undo.  This is usually the SHA-1 hash of the file.
+
+**Example:**
+
+Let's say you want to undo the last commit of `my_file.txt` without deleting any files.
+
+```bash
+git reset --hard my_file.txt
+```
+
+**Important Considerations:**
+
+*   **Backup:**  Before using `--hard`, it's always a good idea to back up your data.  

@@ -1,0 +1,1 @@
+Write a typescript interface for a Point with x and y.

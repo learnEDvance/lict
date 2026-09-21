@@ -1,0 +1,1 @@
+JSON stands for JSON Lines, a standardized format for representing data in a structured and easily parsable way.

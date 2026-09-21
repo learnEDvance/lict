@@ -1,0 +1,1 @@
+Write a bash one-liner that lists files newer than 1 day.

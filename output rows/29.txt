@@ -1,0 +1,1 @@
+TCP (Transmission Control Protocol) is a reliable, ordered communication protocol used for transmitting data over networks. It ensures that data arrives in the correct order and with sufficient reliability. UDP (User Datagram Protocol) is a faster, less reliable, and often unreliable protocol designed for sending data quickly and without delays.

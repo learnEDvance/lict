@@ -1,0 +1,1 @@
+HTTP stands for Hypertext Transfer Protocol.

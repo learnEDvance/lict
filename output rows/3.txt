@@ -1,0 +1,1 @@
+TCP congestion control is a mechanism used to manage network traffic by limiting the number of concurrent connections and ensuring that data is delivered reliably. It prevents overwhelming the network and ensures a smooth, uninterrupted connection for all users.

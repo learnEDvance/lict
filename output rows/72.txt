@@ -1,0 +1,16 @@
+```python
+try:
+    with open("my_file.txt", "r") as file:
+        print(file.read())
+except FileNotFoundError:
+    print("File not found.")
+```
+
+**Explanation:**
+
+1.  **`try...except` block:** This is a crucial part of Python for handling potential errors gracefully. It catches `FileNotFoundError` which is raised when the file doesn't exist.
+2.  **`with open(...) as file:`:** This opens the file in read mode (`"r"`). The `with` statement ensures that the file is automatically closed even if an error occurs, preventing resource leaks.
+3.  **`file.read()`:** Reads the entire contents of the file into a single string.
+4.  **`except FileNotFoundError:`:** If the file doesn't exist, this block catches the `FileNotFoundError` and prints an informative message.
+
+**How to use it

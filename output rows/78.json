@@ -1,0 +1,101 @@
+{
+  "request_num": 78,
+  "request_files": [
+    "78.txt"
+  ],
+  "has_images": false,
+  "has_text": true,
+  "target_model": "gemma-3-270m-it",
+  "model_switch": {
+    "switched": false,
+    "target": "gemma-3-270m-it",
+    "load_time_seconds": 0,
+    "loaded_before": [
+      "gemma-3-270m-it"
+    ]
+  },
+  "payload": {
+    "model": "gemma-3-270m-it",
+    "stream": true,
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "reasoning_effort": null
+  },
+  "extra": {},
+  "attempts": 1,
+  "t_queued": "2026-09-21T17:15:58.196931+00:00",
+  "t_sent": "2026-09-21T17:15:58.872038+00:00",
+  "t_done": "2026-09-21T17:16:00.430917+00:00",
+  "ok": true,
+  "http_status": 200,
+  "reason": "OK",
+  "headers_ms": 5.52099609375,
+  "ttft_ms": 42.8212890625,
+  "total_ms": 1558.415771484375,
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 18,
+    "completion_tokens": 200,
+    "total_tokens": 218,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "server_ids": {
+    "id": "chatcmpl-9q70fvdc1ibmxfv37an269",
+    "created": 1790010958,
+    "model": "gemma-3-270m-it",
+    "system_fingerprint": "gemma-3-270m-it"
+  },
+  "tokens_per_second_client": 131.96,
+  "resource_samples_during": {
+    "gpu": [
+      {
+        "ts_ms": 1790010959406.6404,
+        "nvgpu_ts": "2026/09/21 22:45:59.389",
+        "gpu_util_pct": 65.0,
+        "gpu_mem_util_pct": 47.0,
+        "power_w": 28.73,
+        "gpu_mem_mib": 1352.0,
+        "sm_mhz": 1747.0,
+        "mem_mhz": 6121.0
+      }
+    ],
+    "ps": [
+      {
+        "ts_ms": 1790010960067.6663,
+        "model": "gemma-3-270m-it",
+        "status": "generating",
+        "queued": 0,
+        "parallel": 32,
+        "context_length": 32768
+      }
+    ],
+    "win": [
+      {
+        "ts_ms": 1790010959443.6875,
+        "llama_cpu_pct": null,
+        "llama_ws_mb": null,
+        "total_cpu_pct": null,
+        "avail_kb": null
+      }
+    ]
+  },
+  "resources": {
+    "gpu_util_max_pct": 65.0,
+    "gpu_util_avg_pct": 65.0,
+    "power_max_w": 28.73,
+    "power_avg_w": 28.73,
+    "gpu_mem_max_mib": 1352.0,
+    "ps_states": [
+      {
+        "status": "generating",
+        "queued": 0,
+        "parallel": 32
+      }
+    ],
+    "window_samples": 3
+  },
+  "output_txt": "78.txt",
+  "output_first80": "```json\n{\n  \"student_id\": \"12345\",\n  \"first_name\": \"Alice\",\n  \"last_name\": \"Smit"
+}

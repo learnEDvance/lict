@@ -1,0 +1,22 @@
+```python
+class MyClass:
+    """
+    A simple class that demonstrates the use of the __init__ method.
+    """
+
+    def __init__(self, name):
+        print(f"MyClass created with name: {name}")
+
+
+# Example usage:
+my_object = MyClass("Alice")
+print(my_object)  # Output: MyClass created with name: Alice
+```
+
+**Explanation:**
+
+1. **`class MyClass:`**: This line defines a new class named `MyClass`.  The `class` keyword indicates that this is a class definition.
+
+2. **`"""..."""`**: This is a docstring (documentation string). It's good practice to include docstrings for clarity and maintainability. The docstring explains what the class does, its purpose, and any arguments it accepts.  It also describes the method that will be called when the object is created.
+
+3. **

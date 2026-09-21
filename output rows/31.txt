@@ -1,0 +1,1 @@
+A pointer is a variable that holds the memory address of another variable, allowing you to access and modify the memory location of another variable.

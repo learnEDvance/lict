@@ -1,0 +1,15 @@
+```awk
+awk 'print($0, 1) { print ($0, 2) }'
+```
+
+**Explanation:**
+
+*   `awk`: The standard Unix-based text processing tool.
+*   `'print($0, 1)`: This is the core of the command.  It prints the first field (the second column) of the current file.
+    *   `$0`:  This is the first field in the current file.
+    *   `1`: This is the second field (the 2nd column).
+*   `{ print ($0, 2) }`: This is an *optional* block. It's executed only if the `print` command returns a value that is *not* equal to 1.  This ensures that the output is always the second column.
+
+**How it works:**
+
+The `awk` command reads the file line by line, and for each line,

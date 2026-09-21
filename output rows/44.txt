@@ -1,0 +1,6 @@
+```sql
+SELECT *
+FROM Customers;
+```
+
+This query selects all columns from the `Customers` table and aliases it as `*` for brevity.  The `FROM Customers` clause specifies that we are querying the `Customers` table.

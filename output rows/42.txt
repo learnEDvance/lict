@@ -1,0 +1,16 @@
+```css
+p {
+  color: red; /* Red color */
+  font-size: 20px; /* Increased font size */
+}
+```
+
+**Explanation:**
+
+*   `p`: This selector targets all `p` elements in the document.
+*   `color: red;`: This CSS property sets the color of each paragraph to red.
+*   `font-size: 20px;`: This CSS property increases the font size of each paragraph by 20 pixels.
+
+**How it works:**
+
+This rule will make all paragraphs in your document red and increase their font size by 20 pixels.  The `color` property will be set to `red`.

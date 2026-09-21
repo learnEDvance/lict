@@ -1,0 +1,1 @@
+Write a docker-compose snippet with one redis service.

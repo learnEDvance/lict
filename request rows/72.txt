@@ -1,0 +1,1 @@
+Write a python one-liner to read a file and print it.

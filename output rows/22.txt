@@ -1,0 +1,20 @@
+```sql
+SELECT COUNT(*) AS user_count
+FROM users;
+```
+
+**Explanation:**
+
+* **`SELECT COUNT(*)`**: This is the core of the query. `COUNT(*)` counts all rows in the `users` table, regardless of whether they are null or not.  This effectively gives you the total number of records for each country.
+* **`AS user_count`**: This assigns an alias to the calculated count column. This makes the output more readable and easier to understand.
+
+**Alternative (using `GROUP BY` and `COUNT()`):**
+
+You can also achieve this using a `GROUP BY` clause and `COUNT()` function:
+
+```sql
+SELECT COUNT(*) AS user_count
+FROM users;
+```
+
+This query groups all rows in the `users` table by country, then uses the `COUNT(*)` function to count the number of records for each group.  The result will be a single row with the total

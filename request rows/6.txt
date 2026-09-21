@@ -1,0 +1,1 @@
+Write the JSON for an object with keys: id, name, tags.

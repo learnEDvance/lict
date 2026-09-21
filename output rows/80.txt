@@ -1,0 +1,16 @@
+```c
+#include <stdio.h>
+
+int main() {
+  // Prints "Hello, World!" to the console
+  printf("Hello, World!\n");
+  return 0; // Return 0 to indicate successful execution
+}
+```
+
+**Explanation:**
+
+1. **`#include <stdio.h>`:** This line includes the standard input/output library, which provides functions like `printf` for printing output to the console.
+2. **`int main() { ... }`:**  This is the main function of the program. The `int` indicates that the `main` function returns an integer value (typically 0).
+3. **`printf("Hello, World!\n");`:** This line uses the `printf` function to print "Hello, World!" on the console.
+   - `"Hello, World!"` is a string literal, which means it's a formatted string that can be printed.

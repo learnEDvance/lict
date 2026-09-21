@@ -1,0 +1,1 @@
+A token is a unit of data that represents a specific piece of information, used to represent and process it in machine learning models.

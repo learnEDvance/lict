@@ -1,0 +1,12 @@
+To convert from degrees Fahrenheit to Celsius, we use the formula:
+
+Celsius = (Fahrenheit - 32) * 5/9
+
+Where:
+* F is the temperature in degrees Fahrenheit
+* C is the temperature in Celsius
+
+So, 100 degrees Fahrenheit is equal to:
+100°F - 32 * 5/9 = 100°F - 160/9 = 100°F - 18.88...
+
+Therefore, 100 degrees Fahrenheit is equal to 100°C.

@@ -1,0 +1,85 @@
+{
+  "request_num": 40,
+  "request_files": [
+    "40.txt"
+  ],
+  "has_images": false,
+  "has_text": true,
+  "target_model": "gemma-3-270m-it",
+  "model_switch": {
+    "switched": false,
+    "target": "gemma-3-270m-it",
+    "load_time_seconds": 0,
+    "loaded_before": [
+      "gemma-3-270m-it"
+    ]
+  },
+  "payload": {
+    "model": "gemma-3-270m-it",
+    "stream": true,
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "reasoning_effort": null
+  },
+  "extra": {},
+  "attempts": 1,
+  "t_queued": "2026-09-21T17:14:57.640759+00:00",
+  "t_sent": "2026-09-21T17:14:58.366217+00:00",
+  "t_done": "2026-09-21T17:15:00.012722+00:00",
+  "ok": true,
+  "http_status": 200,
+  "reason": "OK",
+  "headers_ms": 4.884765625,
+  "ttft_ms": 48.07470703125,
+  "total_ms": 1646.2646484375,
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 21,
+    "completion_tokens": 200,
+    "total_tokens": 221,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "server_ids": {
+    "id": "chatcmpl-zyuh7m7ojjdcz2k96osx0j",
+    "created": 1790010898,
+    "model": "gemma-3-270m-it",
+    "system_fingerprint": "gemma-3-270m-it"
+  },
+  "tokens_per_second_client": 125.14,
+  "resource_samples_during": {
+    "gpu": [
+      {
+        "ts_ms": 1790010899402.7034,
+        "nvgpu_ts": "2026/09/21 22:44:59.384",
+        "gpu_util_pct": 63.0,
+        "gpu_mem_util_pct": 48.0,
+        "power_w": 36.57,
+        "gpu_mem_mib": 1352.0,
+        "sm_mhz": 2062.0,
+        "mem_mhz": 6121.0
+      }
+    ],
+    "ps": [],
+    "win": [
+      {
+        "ts_ms": 1790010898390.2083,
+        "llama_cpu_pct": null,
+        "llama_ws_mb": null,
+        "total_cpu_pct": null,
+        "avail_kb": null
+      }
+    ]
+  },
+  "resources": {
+    "gpu_util_max_pct": 63.0,
+    "gpu_util_avg_pct": 63.0,
+    "power_max_w": 36.57,
+    "power_avg_w": 36.57,
+    "gpu_mem_max_mib": 1352.0,
+    "window_samples": 2
+  },
+  "output_txt": "40.txt",
+  "output_first80": "```python\ndef is_prime(number):\n    \"\"\"\n    Checks if a given number is prime.\n\n"
+}

@@ -1,0 +1,79 @@
+{
+  "request_num": 1,
+  "request_files": [
+    "1.txt"
+  ],
+  "has_images": false,
+  "has_text": true,
+  "target_model": "gemma-3-270m-it",
+  "model_switch": {
+    "switched": true,
+    "target": "gemma-3-270m-it",
+    "load_http": 200,
+    "load_response": {
+      "type": "llm",
+      "instance_id": "gemma-3-270m-it",
+      "load_time_seconds": 3.475,
+      "status": "loaded"
+    },
+    "load_time_seconds": 3.475,
+    "ready_wait_s": 0.0,
+    "elapsed_ms": 4206.4,
+    "unloaded": [
+      {
+        "instance_id": "google/gemma-4-e4b",
+        "http": 200,
+        "response": {
+          "instance_id": "google/gemma-4-e4b"
+        }
+      }
+    ],
+    "loaded_before": [
+      "google/gemma-4-e4b"
+    ]
+  },
+  "payload": {
+    "model": "gemma-3-270m-it",
+    "stream": true,
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "reasoning_effort": null
+  },
+  "extra": {},
+  "attempts": 1,
+  "t_queued": "2026-09-21T17:13:56.159393+00:00",
+  "t_sent": "2026-09-21T17:14:02.628653+00:00",
+  "t_done": "2026-09-21T17:14:02.740432+00:00",
+  "ok": true,
+  "http_status": 200,
+  "reason": "OK",
+  "headers_ms": 6.583984375,
+  "ttft_ms": 86.346435546875,
+  "total_ms": 111.557373046875,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 21,
+    "completion_tokens": 3,
+    "total_tokens": 24,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "server_ids": {
+    "id": "chatcmpl-z8kjmgxfsmcdns35myg2k",
+    "created": 1790010842,
+    "model": "gemma-3-270m-it",
+    "system_fingerprint": "gemma-3-270m-it"
+  },
+  "tokens_per_second_client": 119.0,
+  "resource_samples_during": {
+    "gpu": [],
+    "ps": [],
+    "win": []
+  },
+  "resources": {
+    "window_samples": 0
+  },
+  "output_txt": "1.txt",
+  "output_first80": "Paris\n"
+}

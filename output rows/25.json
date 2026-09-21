@@ -1,0 +1,77 @@
+{
+  "request_num": 25,
+  "request_files": [
+    "25.txt"
+  ],
+  "has_images": false,
+  "has_text": true,
+  "target_model": "gemma-3-270m-it",
+  "model_switch": {
+    "switched": false,
+    "target": "gemma-3-270m-it",
+    "load_time_seconds": 0,
+    "loaded_before": [
+      "gemma-3-270m-it"
+    ]
+  },
+  "payload": {
+    "model": "gemma-3-270m-it",
+    "stream": true,
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "reasoning_effort": null
+  },
+  "extra": {},
+  "attempts": 1,
+  "t_queued": "2026-09-21T17:14:34.445971+00:00",
+  "t_sent": "2026-09-21T17:14:35.144819+00:00",
+  "t_done": "2026-09-21T17:14:35.739641+00:00",
+  "ok": true,
+  "http_status": 200,
+  "reason": "OK",
+  "headers_ms": 7.7998046875,
+  "ttft_ms": 61.959716796875,
+  "total_ms": 594.34716796875,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 19,
+    "completion_tokens": 60,
+    "total_tokens": 79,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "server_ids": {
+    "id": "chatcmpl-nh7wpqay0jlq7nwj8aa23q",
+    "created": 1790010875,
+    "model": "gemma-3-270m-it",
+    "system_fingerprint": "gemma-3-270m-it"
+  },
+  "tokens_per_second_client": 112.7,
+  "resource_samples_during": {
+    "gpu": [
+      {
+        "ts_ms": 1790010875383.1072,
+        "nvgpu_ts": "2026/09/21 22:44:35.365",
+        "gpu_util_pct": 0.0,
+        "gpu_mem_util_pct": 0.0,
+        "power_w": 18.47,
+        "gpu_mem_mib": 1353.0,
+        "sm_mhz": 1020.0,
+        "mem_mhz": 6121.0
+      }
+    ],
+    "ps": [],
+    "win": []
+  },
+  "resources": {
+    "gpu_util_max_pct": 0.0,
+    "gpu_util_avg_pct": 0.0,
+    "power_max_w": 18.47,
+    "power_avg_w": 18.47,
+    "gpu_mem_max_mib": 1353.0,
+    "window_samples": 1
+  },
+  "output_txt": "25.txt",
+  "output_first80": "RAM (Random Access Memory) is the main storage area for your computer's operatin"
+}

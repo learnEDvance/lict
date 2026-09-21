@@ -1,0 +1,1 @@
+Convert 100 degrees Fahrenheit to Celsius. Show the formula.

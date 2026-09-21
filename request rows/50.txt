@@ -1,0 +1,1 @@
+Write a bash command to find and kill a process by name.

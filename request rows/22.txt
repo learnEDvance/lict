@@ -1,0 +1,1 @@
+Write a SQL query to count users per country.

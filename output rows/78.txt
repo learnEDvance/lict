@@ -1,0 +1,25 @@
+```json
+{
+  "student_id": "12345",
+  "first_name": "Alice",
+  "last_name": "Smith",
+  "age": 22,
+  "gender": "Female",
+  "major": "Computer Science",
+  "courses": [
+    {
+      "course_id": "101",
+      "title": "Introduction to Programming",
+      "description": "A basic overview of programming concepts.",
+      "credits": 3,
+      "grade": "A"
+    },
+    {
+      "course_id": "102",
+      "title": "Data Structures and Algorithms",
+      "description": "Understanding fundamental data structures like arrays, linked lists, and trees.",
+      "credits": 4,
+      "grade": "B+"
+    }
+  ],
+  "parent_id

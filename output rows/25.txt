@@ -1,0 +1,1 @@
+RAM (Random Access Memory) is the main storage area for your computer's operating system and applications, allowing you to access data and programs quickly. VRAM (Video RAM) is a more powerful memory type that provides significantly faster performance for graphics-intensive tasks like gaming and video editing.

@@ -1,0 +1,10 @@
+```sql
+DELETE FROM your_table WHERE date_column > DATE('Y')
+```
+
+**Explanation:**
+
+* **`DELETE FROM your_table`**: This specifies the table you want to delete. Replace `your_table` with the actual name of your table.
+* **`WHERE date_column > DATE('Y')`**: This is the crucial part. It filters the rows in the table based on the value of the `date_column`.
+    * **`date_column`**:  This is the column you want to check against.  It should be a date or datetime data type.
+    * **`DATE('Y')`**: This is a function that calculates the date in the format YYYYMMDDTHH:MM:SS.  The `DATE()` function is a built-in SQL function that performs date arithmetic.  The `Y` specifies the year (e.g., 2023).

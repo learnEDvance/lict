@@ -1,0 +1,27 @@
+```python
+def count_vowels(input_string):
+    """
+    Counts the number of vowels (a, e, i, o, u) in a given string.
+
+    Args:
+        input_string: The string to analyze.
+
+    Returns:
+        The number of vowels in the string.
+    """
+    vowels = "aeiou"  # Define a string containing all vowels (both upper and lower case)
+    count = 0
+    for char in input_string:
+        if char in vowels:
+            count += 1
+    return count
+
+# Example usage:
+string = "Hello, World!"
+num_vowels = count_vowels(string)
+print("Number of vowels:", num_vowels)
+```
+
+**Explanation:**
+
+1. **`def count_vowels(input_string):`**:  This defines a function named `count_vowels`

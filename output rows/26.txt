@@ -1,0 +1,14 @@
+```html
+<form action="your-url/submit" method="post">
+  <input type="text" id="myInput" name="myInput" required>
+  <button type="submit">Submit</button>
+</form>
+```
+
+**Explanation:**
+
+* **`<form>`:** This is the standard HTML form element.
+* **`action="your-url/submit"`:** This attribute specifies the URL of the form endpoint (e.g., `https://example.com/submit`).  Replace `your-url` with the actual URL of your form.
+* **`method="post"`:** Specifies that the form is submitted as a POST request.  This is generally preferred for forms where you want to send data to a server.
+* **`<input type="text" id="myInput" name="myInput" required>`:** This is the input field.
+    * `type="text"`: Specifies

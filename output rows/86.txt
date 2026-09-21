@@ -1,0 +1,17 @@
+```typescript
+interface Point {
+  x: number;
+  y: number;
+}
+
+// Example usage:
+const myPoint = new Point(10, 20);
+console.log(myPoint.x); // Output: 10
+console.log(myPoint.y); // Output: 20
+```
+
+**Explanation:**
+
+* **`interface Point { ... }`**: This defines an interface named `Point`.  The `interface` is a type representing a collection of data, and the `Point` class represents each element within that collection.
+* **`x: number; y: number;`**:  This declares the `x` and `y` attributes of the `Point` object.  `x` is a number, and `y` is a number.  The `number` type is used to represent numbers in TypeScript.
+* **`new Point(10, 20

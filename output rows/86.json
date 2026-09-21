@@ -1,0 +1,101 @@
+{
+  "request_num": 86,
+  "request_files": [
+    "86.txt"
+  ],
+  "has_images": false,
+  "has_text": true,
+  "target_model": "gemma-3-270m-it",
+  "model_switch": {
+    "switched": false,
+    "target": "gemma-3-270m-it",
+    "load_time_seconds": 0,
+    "loaded_before": [
+      "gemma-3-270m-it"
+    ]
+  },
+  "payload": {
+    "model": "gemma-3-270m-it",
+    "stream": true,
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "reasoning_effort": null
+  },
+  "extra": {},
+  "attempts": 1,
+  "t_queued": "2026-09-21T17:16:14.538230+00:00",
+  "t_sent": "2026-09-21T17:16:15.229429+00:00",
+  "t_done": "2026-09-21T17:16:16.785885+00:00",
+  "ok": true,
+  "http_status": 200,
+  "reason": "OK",
+  "headers_ms": 7.53271484375,
+  "ttft_ms": 56.6455078125,
+  "total_ms": 1555.97802734375,
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 21,
+    "completion_tokens": 200,
+    "total_tokens": 221,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "server_ids": {
+    "id": "chatcmpl-jkjkuom2tkd00wp1s79io",
+    "created": 1790010975,
+    "model": "gemma-3-270m-it",
+    "system_fingerprint": "gemma-3-270m-it"
+  },
+  "tokens_per_second_client": 133.39,
+  "resource_samples_during": {
+    "gpu": [
+      {
+        "ts_ms": 1790010975404.8418,
+        "nvgpu_ts": "2026/09/21 22:46:15.388",
+        "gpu_util_pct": 0.0,
+        "gpu_mem_util_pct": 0.0,
+        "power_w": 24.16,
+        "gpu_mem_mib": 1352.0,
+        "sm_mhz": 2047.0,
+        "mem_mhz": 6121.0
+      }
+    ],
+    "ps": [
+      {
+        "ts_ms": 1790010976031.3901,
+        "model": "gemma-3-270m-it",
+        "status": "generating",
+        "queued": 0,
+        "parallel": 32,
+        "context_length": 32768
+      }
+    ],
+    "win": [
+      {
+        "ts_ms": 1790010975998.0886,
+        "llama_cpu_pct": null,
+        "llama_ws_mb": null,
+        "total_cpu_pct": null,
+        "avail_kb": null
+      }
+    ]
+  },
+  "resources": {
+    "gpu_util_max_pct": 0.0,
+    "gpu_util_avg_pct": 0.0,
+    "power_max_w": 24.16,
+    "power_avg_w": 24.16,
+    "gpu_mem_max_mib": 1352.0,
+    "ps_states": [
+      {
+        "status": "generating",
+        "queued": 0,
+        "parallel": 32
+      }
+    ],
+    "window_samples": 3
+  },
+  "output_txt": "86.txt",
+  "output_first80": "```typescript\ninterface Point {\n  x: number;\n  y: number;\n}\n\n// Example usage:\nc"
+}

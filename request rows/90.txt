@@ -1,0 +1,1 @@
+Write an awk command to print the 2nd column of a file.

@@ -1,0 +1,1 @@
+A neural network is a computer program that learns patterns and relationships from data by using interconnected nodes (neurons) to process information. These nodes are connected through connections, allowing the network to learn complex functions.

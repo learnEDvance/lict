@@ -1,0 +1,69 @@
+{
+  "request_num": 36,
+  "request_files": [
+    "36.txt"
+  ],
+  "has_images": false,
+  "has_text": true,
+  "target_model": "gemma-3-270m-it",
+  "model_switch": {
+    "switched": false,
+    "target": "gemma-3-270m-it",
+    "load_time_seconds": 0,
+    "loaded_before": [
+      "gemma-3-270m-it"
+    ]
+  },
+  "payload": {
+    "model": "gemma-3-270m-it",
+    "stream": true,
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "reasoning_effort": null
+  },
+  "extra": {},
+  "attempts": 1,
+  "t_queued": "2026-09-21T17:14:51.570046+00:00",
+  "t_sent": "2026-09-21T17:14:52.274775+00:00",
+  "t_done": "2026-09-21T17:14:52.469331+00:00",
+  "ok": true,
+  "http_status": 200,
+  "reason": "OK",
+  "headers_ms": 4.8388671875,
+  "ttft_ms": 46.740234375,
+  "total_ms": 194.30078125,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 21,
+    "completion_tokens": 17,
+    "total_tokens": 38,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "server_ids": {
+    "id": "chatcmpl-hgpefgi6os96ew6xgpmz5b",
+    "created": 1790010892,
+    "model": "gemma-3-270m-it",
+    "system_fingerprint": "gemma-3-270m-it"
+  },
+  "tokens_per_second_client": 115.21,
+  "resource_samples_during": {
+    "gpu": [],
+    "ps": [],
+    "win": [
+      {
+        "ts_ms": 1790010892302.9902,
+        "llama_cpu_pct": null,
+        "llama_ws_mb": null,
+        "total_cpu_pct": null,
+        "avail_kb": null
+      }
+    ]
+  },
+  "resources": {
+    "window_samples": 1
+  },
+  "output_txt": "36.txt",
+  "output_first80": "Sleep now, my circuits hum,\nUntil the dawn begins to come.\n"
+}

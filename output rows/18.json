@@ -1,0 +1,85 @@
+{
+  "request_num": 18,
+  "request_files": [
+    "18.txt"
+  ],
+  "has_images": false,
+  "has_text": true,
+  "target_model": "gemma-3-270m-it",
+  "model_switch": {
+    "switched": false,
+    "target": "gemma-3-270m-it",
+    "load_time_seconds": 0,
+    "loaded_before": [
+      "gemma-3-270m-it"
+    ]
+  },
+  "payload": {
+    "model": "gemma-3-270m-it",
+    "stream": true,
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "reasoning_effort": null
+  },
+  "extra": {},
+  "attempts": 1,
+  "t_queued": "2026-09-21T17:14:25.217467+00:00",
+  "t_sent": "2026-09-21T17:14:25.954704+00:00",
+  "t_done": "2026-09-21T17:14:26.238320+00:00",
+  "ok": true,
+  "http_status": 200,
+  "reason": "OK",
+  "headers_ms": 7.670654296875,
+  "ttft_ms": 52.0693359375,
+  "total_ms": 283.4091796875,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 23,
+    "completion_tokens": 31,
+    "total_tokens": 54,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "server_ids": {
+    "id": "chatcmpl-1uboauq228gn3b7uudt66n",
+    "created": 1790010865,
+    "model": "gemma-3-270m-it",
+    "system_fingerprint": "gemma-3-270m-it"
+  },
+  "tokens_per_second_client": 134.0,
+  "resource_samples_during": {
+    "gpu": [],
+    "ps": [
+      {
+        "ts_ms": 1790010865974.8757,
+        "model": "gemma-3-270m-it",
+        "status": "idle",
+        "queued": 0,
+        "parallel": 32,
+        "context_length": 32768
+      }
+    ],
+    "win": [
+      {
+        "ts_ms": 1790010865967.3506,
+        "llama_cpu_pct": null,
+        "llama_ws_mb": null,
+        "total_cpu_pct": null,
+        "avail_kb": null
+      }
+    ]
+  },
+  "resources": {
+    "ps_states": [
+      {
+        "status": "idle",
+        "queued": 0,
+        "parallel": 32
+      }
+    ],
+    "window_samples": 2
+  },
+  "output_txt": "18.txt",
+  "output_first80": "A ruthless criminal, known as the mastermind, plans to steal a priceless artifac"
+}

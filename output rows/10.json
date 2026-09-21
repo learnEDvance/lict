@@ -1,0 +1,77 @@
+{
+  "request_num": 10,
+  "request_files": [
+    "10.txt"
+  ],
+  "has_images": false,
+  "has_text": true,
+  "target_model": "gemma-3-270m-it",
+  "model_switch": {
+    "switched": false,
+    "target": "gemma-3-270m-it",
+    "load_time_seconds": 0,
+    "loaded_before": [
+      "gemma-3-270m-it"
+    ]
+  },
+  "payload": {
+    "model": "gemma-3-270m-it",
+    "stream": true,
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "reasoning_effort": null
+  },
+  "extra": {},
+  "attempts": 1,
+  "t_queued": "2026-09-21T17:14:14.069911+00:00",
+  "t_sent": "2026-09-21T17:14:14.767254+00:00",
+  "t_done": "2026-09-21T17:14:15.513674+00:00",
+  "ok": true,
+  "http_status": 200,
+  "reason": "OK",
+  "headers_ms": 5.54345703125,
+  "ttft_ms": 43.6669921875,
+  "total_ms": 746.068359375,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 20,
+    "completion_tokens": 86,
+    "total_tokens": 106,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "server_ids": {
+    "id": "chatcmpl-z4jv6ias4fw1xp1qugs9",
+    "created": 1790010854,
+    "model": "gemma-3-270m-it",
+    "system_fingerprint": "gemma-3-270m-it"
+  },
+  "tokens_per_second_client": 122.44,
+  "resource_samples_during": {
+    "gpu": [
+      {
+        "ts_ms": 1790010855418.5513,
+        "nvgpu_ts": "2026/09/21 22:44:15.400",
+        "gpu_util_pct": 72.0,
+        "gpu_mem_util_pct": 35.0,
+        "power_w": 24.66,
+        "gpu_mem_mib": 1352.0,
+        "sm_mhz": 1965.0,
+        "mem_mhz": 6121.0
+      }
+    ],
+    "ps": [],
+    "win": []
+  },
+  "resources": {
+    "gpu_util_max_pct": 72.0,
+    "gpu_util_avg_pct": 72.0,
+    "power_max_w": 24.66,
+    "power_avg_w": 24.66,
+    "gpu_mem_max_mib": 1352.0,
+    "window_samples": 1
+  },
+  "output_txt": "10.txt",
+  "output_first80": "Here are a few options for rewriting \"It is raining heavily\" with a metaphor:\n\n*"
+}

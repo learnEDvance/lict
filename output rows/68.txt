@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    println!("Hello, world!");
+}
+```
+
+**Explanation:**
+
+*   `fn main()`: This is the entry point of your Rust program.  It's where you call the `main` function.
+*   `println!("Hello, world!");`: This line prints "Hello, world!" to the console.  The `println!` macro is a standard Rust way to print output to the console.
+
+**How to run this code:**
+
+1.  Save the code as a `.rs` file (e.g., `hello.rs`).
+2.  Open a terminal or command prompt.
+3.  Navigate to the directory where you saved the file.
+4.  Run the following command: `rustc hello.rs`
+5.  You should see "Hello, world!" printed in your terminal.
+
+**Important Considerations:**
+
+*   **Error Handling:** This program doesn'

@@ -1,0 +1,17 @@
+```go
+package main
+
+func main() {
+  for i := 1; i <= 5; i++ {
+    fmt.Printf("%d\n", i)
+  }
+}
+```
+
+**Explanation:**
+
+* **`package main`**: This line declares the package that contains the `main` function, which is where the program's execution begins.
+* **`func main() ...`**: This is the entry point of the program. The `func main()` function is a standard Go function that takes a single argument (the number `i`) and prints the value of `i` to the console.
+* **`for i := 1; i <= 5; i++`**: This is a `for` loop that iterates from 1 up to and including 5.
+    * `i := 1`:  This initializes the loop counter `i` to 1.
+    * `i <= 

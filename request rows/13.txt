@@ -1,0 +1,1 @@
+Write a greeting message a customer support bot would send.

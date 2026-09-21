@@ -1,0 +1,13 @@
+```sql
+ALTER TABLE your_table
+ADD COLUMN email VARCHAR(255);
+```
+
+**Explanation:**
+
+* **`ALTER TABLE your_table`**: This is the command to modify the table definition.  Replace `your_table` with the actual name of your table.
+* **`ADD COLUMN email VARCHAR(255)`**: This statement adds a new column named `email` to the table.
+    * **`ALTER TABLE`**: Specifies that you want to modify the table's structure.
+    * **`your_table`**:  Replace this with the actual name of your table.
+    * **`ADD COLUMN email VARCHAR(255)`**: This is the SQL statement that adds a new column named `email` to the table.
+    * **`VARCHAR(255)`**: Specifies the data type for the `email` column.  `VARCHAR` is a common and flexible choice for storing strings of

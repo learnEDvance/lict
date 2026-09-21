@@ -1,0 +1,631 @@
+{
+  "run_time": "2026-09-21T16:57:09.684690+00:00",
+  "config": {
+    "base_url": "http://192.168.1.3:1234",
+    "model": "gemma-3-270m-it",
+    "vision_model": "",
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "stream": true,
+    "workers": 1,
+    "retries": 2,
+    "sample_interval": 2.0,
+    "dry_run": false
+  },
+  "system": {
+    "time": "2026-09-21T16:55:42.443083+00:00",
+    "host": "Mitra",
+    "lms_runtime": {
+      "name": "executorch-asr-win-x86_64-nvidia-cuda128-avx2",
+      "version": "0.0.8",
+      "engine": "executorch-asr"
+    },
+    "cpu": "AMD Ryzen 7 7445HS w/ Radeon 740M Graphics     ",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "vram_bytes": 4294443008,
+    "ram_bytes": 16395882496,
+    "lms_survey_raw": {
+      "status": "ok",
+      "engines": [
+        {
+          "name": "executorch-asr-win-x86_64-nvidia-cuda128-avx2",
+          "version": "0.0.8",
+          "engine": "executorch-asr",
+          "platform": "win",
+          "compatibility": {
+            "status": "compatible"
+          },
+          "supportedModelFormatNames": [
+            "PTE"
+          ],
+          "hardwareSurvey": {
+            "gpuSurveyResult": {
+              "result": {
+                "code": "success",
+                "message": ""
+              },
+              "gpuInfo": [
+                {
+                  "name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+                  "deviceId": 0,
+                  "totalMemoryCapacityBytes": 4294443008,
+                  "dedicatedMemoryCapacityBytes": 4294443008,
+                  "integrationType": "discrete",
+                  "detectionPlatform": "CUDA",
+                  "detectionPlatformVersion": "",
+                  "otherInfo": {
+                    "deviceUUID": "9fc503cd824ad2697f4a38c745c00ce5",
+                    "computeCapability": "8.6",
+                    "driverVersion": "13040"
+                  }
+                }
+              ]
+            },
+            "cpuSurveyResult": {
+              "result": {
+                "code": "success",
+                "message": ""
+              },
+              "cpuInfo": {
+                "name": "AMD Ryzen 7 7445HS w/ Radeon 740M Graphics     ",
+                "architecture": "x86_64",
+                "supportedInstructionSetExtensions": [
+                  "AVX",
+                  "AVX2"
+                ]
+              }
+            }
+          },
+          "memoryInfo": {
+            "ramCapacity": 16395882496,
+            "vramCapacity": 4294443008,
+            "totalMemory": 20690325504
+          },
+          "visibleDevicesConfig": {
+            "visibleDevices": [
+              0
+            ],
+            "changesOrder": false
+          }
+        },
+        {
+          "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+          "version": "2.41.0",
+          "engine": "llama.cpp",
+          "platform": "win",
+          "compatibility": {
+            "status": "compatible"
+          },
+          "supportedModelFormatNames": [
+            "GGUF"
+          ],
+          "hardwareSurvey": {
+            "gpuSurveyResult": {
+              "result": {
+                "code": "success",
+                "message": ""
+              },
+              "gpuInfo": [
+                {
+                  "name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+                  "deviceId": 0,
+                  "totalMemoryCapacityBytes": 4294443008,
+                  "dedicatedMemoryCapacityBytes": 4294443008,
+                  "integrationType": "discrete",
+                  "detectionPlatform": "CUDA",
+                  "detectionPlatformVersion": "",
+                  "otherInfo": {
+                    "deviceUUID": "9fc503cd824ad2697f4a38c745c00ce5",
+                    "computeCapability": "8.6",
+                    "driverVersion": "13040"
+                  }
+                }
+              ]
+            },
+            "cpuSurveyResult": {
+              "result": {
+                "code": "success",
+                "message": ""
+              },
+              "cpuInfo": {
+                "name": "AMD Ryzen 7 7445HS w/ Radeon 740M Graphics     ",
+                "architecture": "x86_64",
+                "supportedInstructionSetExtensions": [
+                  "AVX",
+                  "AVX2"
+                ]
+              }
+            }
+          },
+          "memoryInfo": {
+            "ramCapacity": 16395882496,
+            "vramCapacity": 4294443008,
+            "totalMemory": 20690325504
+          },
+          "visibleDevicesConfig": {
+            "visibleDevices": [
+              0
+            ],
+            "changesOrder": false
+          }
+        }
+      ]
+    },
+    "nvidia_smi": [
+      "NVIDIA GeForce RTX 3050 Laptop GPU",
+      "4096 MiB",
+      "616.92"
+    ],
+    "models": [
+      "text-embedding-nomic-embed-text-v1.5",
+      "prism-ml/bonsai-27b",
+      "google/gemma-4-12b",
+      "gemma-3-270m-it",
+      "google/gemma-4-e4b"
+    ]
+  },
+  "totals": {
+    "requests": 100,
+    "ok": 100,
+    "failed": 0,
+    "wall_start": "2026-09-21T16:55:43.390066+00:00",
+    "wall_end": "2026-09-21T16:57:09.058172+00:00",
+    "wall_secs": 85.67,
+    "prompt_tokens": 2086,
+    "completion_tokens": 9518,
+    "total_tokens": 11604,
+    "aggregate_tokens_per_sec": 135.45
+  },
+  "latency_ms": {
+    "mean": 821.4037915039063,
+    "median": 403.02685546875,
+    "p95": 1609.0078125
+  },
+  "ttft_ms": {
+    "mean": 97.3635546875,
+    "median": 52.5699462890625
+  },
+  "failures": [],
+  "queue_states_seen": {
+    "run_start": 1,
+    "queued": 100,
+    "sending": 100,
+    "done": 100,
+    "run_end": 1
+  }
+}
+{
+  "run_time": "2026-09-21T17:10:03.903090+00:00",
+  "config": {
+    "base_url": "http://192.168.1.3:1234",
+    "model": "gemma-3-270m-it",
+    "vision_model": "google/gemma-4-e4b",
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "stream": true,
+    "workers": 1,
+    "retries": 2,
+    "sample_interval": 2.0,
+    "dry_run": false,
+    "auto_switch": true
+  },
+  "system": {
+    "time": "2026-09-21T17:06:10.245472+00:00",
+    "host": "Mitra",
+    "lms_runtime": {
+      "name": "executorch-asr-win-x86_64-nvidia-cuda128-avx2",
+      "version": "0.0.8",
+      "engine": "executorch-asr"
+    },
+    "cpu": "AMD Ryzen 7 7445HS w/ Radeon 740M Graphics     ",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "vram_bytes": 4294443008,
+    "ram_bytes": 16395882496,
+    "lms_survey_raw": {
+      "status": "ok",
+      "engines": [
+        {
+          "name": "executorch-asr-win-x86_64-nvidia-cuda128-avx2",
+          "version": "0.0.8",
+          "engine": "executorch-asr",
+          "platform": "win",
+          "compatibility": {
+            "status": "compatible"
+          },
+          "supportedModelFormatNames": [
+            "PTE"
+          ],
+          "hardwareSurvey": {
+            "gpuSurveyResult": {
+              "result": {
+                "code": "success",
+                "message": ""
+              },
+              "gpuInfo": [
+                {
+                  "name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+                  "deviceId": 0,
+                  "totalMemoryCapacityBytes": 4294443008,
+                  "dedicatedMemoryCapacityBytes": 4294443008,
+                  "integrationType": "discrete",
+                  "detectionPlatform": "CUDA",
+                  "detectionPlatformVersion": "",
+                  "otherInfo": {
+                    "deviceUUID": "9fc503cd824ad2697f4a38c745c00ce5",
+                    "computeCapability": "8.6",
+                    "driverVersion": "13040"
+                  }
+                }
+              ]
+            },
+            "cpuSurveyResult": {
+              "result": {
+                "code": "success",
+                "message": ""
+              },
+              "cpuInfo": {
+                "name": "AMD Ryzen 7 7445HS w/ Radeon 740M Graphics     ",
+                "architecture": "x86_64",
+                "supportedInstructionSetExtensions": [
+                  "AVX",
+                  "AVX2"
+                ]
+              }
+            }
+          },
+          "memoryInfo": {
+            "ramCapacity": 16395882496,
+            "vramCapacity": 4294443008,
+            "totalMemory": 20690325504
+          },
+          "visibleDevicesConfig": {
+            "visibleDevices": [
+              0
+            ],
+            "changesOrder": false
+          }
+        },
+        {
+          "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+          "version": "2.41.0",
+          "engine": "llama.cpp",
+          "platform": "win",
+          "compatibility": {
+            "status": "compatible"
+          },
+          "supportedModelFormatNames": [
+            "GGUF"
+          ],
+          "hardwareSurvey": {
+            "gpuSurveyResult": {
+              "result": {
+                "code": "success",
+                "message": ""
+              },
+              "gpuInfo": [
+                {
+                  "name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+                  "deviceId": 0,
+                  "totalMemoryCapacityBytes": 4294443008,
+                  "dedicatedMemoryCapacityBytes": 4294443008,
+                  "integrationType": "discrete",
+                  "detectionPlatform": "CUDA",
+                  "detectionPlatformVersion": "",
+                  "otherInfo": {
+                    "deviceUUID": "9fc503cd824ad2697f4a38c745c00ce5",
+                    "computeCapability": "8.6",
+                    "driverVersion": "13040"
+                  }
+                }
+              ]
+            },
+            "cpuSurveyResult": {
+              "result": {
+                "code": "success",
+                "message": ""
+              },
+              "cpuInfo": {
+                "name": "AMD Ryzen 7 7445HS w/ Radeon 740M Graphics     ",
+                "architecture": "x86_64",
+                "supportedInstructionSetExtensions": [
+                  "AVX",
+                  "AVX2"
+                ]
+              }
+            }
+          },
+          "memoryInfo": {
+            "ramCapacity": 16395882496,
+            "vramCapacity": 4294443008,
+            "totalMemory": 20690325504
+          },
+          "visibleDevicesConfig": {
+            "visibleDevices": [
+              0
+            ],
+            "changesOrder": false
+          }
+        }
+      ]
+    },
+    "nvidia_smi": [
+      "NVIDIA GeForce RTX 3050 Laptop GPU",
+      "4096 MiB",
+      "616.92"
+    ],
+    "models": [
+      "gemma-3-270m-it",
+      "text-embedding-nomic-embed-text-v1.5",
+      "prism-ml/bonsai-27b",
+      "google/gemma-4-12b",
+      "google/gemma-4-e4b"
+    ]
+  },
+  "totals": {
+    "requests": 100,
+    "ok": 100,
+    "failed": 0,
+    "wall_start": "2026-09-21T17:06:11.157199+00:00",
+    "wall_end": "2026-09-21T17:10:01.988002+00:00",
+    "wall_secs": 230.83,
+    "prompt_tokens": 2854,
+    "completion_tokens": 8640,
+    "total_tokens": 11494,
+    "aggregate_tokens_per_sec": 49.79,
+    "ok_by_model": {
+      "gemma-3-270m-it": 90,
+      "google/gemma-4-e4b": 10
+    }
+  },
+  "model_switches": [
+    {
+      "num": 91,
+      "from": [
+        "gemma-3-270m-it"
+      ],
+      "to": "google/gemma-4-e4b",
+      "load_time_seconds": 18.137,
+      "ready_wait_s": 0.0
+    }
+  ],
+  "latency_ms": {
+    "mean": 1359.3415991210939,
+    "median": 689.640380859375,
+    "p95": 5737.04736328125
+  },
+  "ttft_ms": {
+    "mean": 368.76771728515627,
+    "median": 52.5650634765625
+  },
+  "failures": [],
+  "queue_states_seen": {
+    "run_start": 1,
+    "queued": 100,
+    "sending": 100,
+    "done": 100,
+    "model_switch": 1,
+    "run_end": 1
+  }
+}
+{
+  "run_time": "2026-09-21T17:17:58.614008+00:00",
+  "config": {
+    "base_url": "http://192.168.1.3:1234",
+    "model": "gemma-3-270m-it",
+    "vision_model": "google/gemma-4-e4b",
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "stream": true,
+    "workers": 1,
+    "retries": 2,
+    "sample_interval": 2.0,
+    "dry_run": false,
+    "auto_switch": true
+  },
+  "system": {
+    "time": "2026-09-21T17:13:55.241596+00:00",
+    "host": "Mitra",
+    "lms_runtime": {
+      "name": "executorch-asr-win-x86_64-nvidia-cuda128-avx2",
+      "version": "0.0.8",
+      "engine": "executorch-asr"
+    },
+    "cpu": "AMD Ryzen 7 7445HS w/ Radeon 740M Graphics     ",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "vram_bytes": 4294443008,
+    "ram_bytes": 16395882496,
+    "lms_survey_raw": {
+      "status": "ok",
+      "engines": [
+        {
+          "name": "executorch-asr-win-x86_64-nvidia-cuda128-avx2",
+          "version": "0.0.8",
+          "engine": "executorch-asr",
+          "platform": "win",
+          "compatibility": {
+            "status": "compatible"
+          },
+          "supportedModelFormatNames": [
+            "PTE"
+          ],
+          "hardwareSurvey": {
+            "gpuSurveyResult": {
+              "result": {
+                "code": "success",
+                "message": ""
+              },
+              "gpuInfo": [
+                {
+                  "name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+                  "deviceId": 0,
+                  "totalMemoryCapacityBytes": 4294443008,
+                  "dedicatedMemoryCapacityBytes": 4294443008,
+                  "integrationType": "discrete",
+                  "detectionPlatform": "CUDA",
+                  "detectionPlatformVersion": "",
+                  "otherInfo": {
+                    "deviceUUID": "9fc503cd824ad2697f4a38c745c00ce5",
+                    "computeCapability": "8.6",
+                    "driverVersion": "13040"
+                  }
+                }
+              ]
+            },
+            "cpuSurveyResult": {
+              "result": {
+                "code": "success",
+                "message": ""
+              },
+              "cpuInfo": {
+                "name": "AMD Ryzen 7 7445HS w/ Radeon 740M Graphics     ",
+                "architecture": "x86_64",
+                "supportedInstructionSetExtensions": [
+                  "AVX",
+                  "AVX2"
+                ]
+              }
+            }
+          },
+          "memoryInfo": {
+            "ramCapacity": 16395882496,
+            "vramCapacity": 4294443008,
+            "totalMemory": 20690325504
+          },
+          "visibleDevicesConfig": {
+            "visibleDevices": [
+              0
+            ],
+            "changesOrder": false
+          }
+        },
+        {
+          "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+          "version": "2.41.0",
+          "engine": "llama.cpp",
+          "platform": "win",
+          "compatibility": {
+            "status": "compatible"
+          },
+          "supportedModelFormatNames": [
+            "GGUF"
+          ],
+          "hardwareSurvey": {
+            "gpuSurveyResult": {
+              "result": {
+                "code": "success",
+                "message": ""
+              },
+              "gpuInfo": [
+                {
+                  "name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+                  "deviceId": 0,
+                  "totalMemoryCapacityBytes": 4294443008,
+                  "dedicatedMemoryCapacityBytes": 4294443008,
+                  "integrationType": "discrete",
+                  "detectionPlatform": "CUDA",
+                  "detectionPlatformVersion": "",
+                  "otherInfo": {
+                    "deviceUUID": "9fc503cd824ad2697f4a38c745c00ce5",
+                    "computeCapability": "8.6",
+                    "driverVersion": "13040"
+                  }
+                }
+              ]
+            },
+            "cpuSurveyResult": {
+              "result": {
+                "code": "success",
+                "message": ""
+              },
+              "cpuInfo": {
+                "name": "AMD Ryzen 7 7445HS w/ Radeon 740M Graphics     ",
+                "architecture": "x86_64",
+                "supportedInstructionSetExtensions": [
+                  "AVX",
+                  "AVX2"
+                ]
+              }
+            }
+          },
+          "memoryInfo": {
+            "ramCapacity": 16395882496,
+            "vramCapacity": 4294443008,
+            "totalMemory": 20690325504
+          },
+          "visibleDevicesConfig": {
+            "visibleDevices": [
+              0
+            ],
+            "changesOrder": false
+          }
+        }
+      ]
+    },
+    "nvidia_smi": [
+      "NVIDIA GeForce RTX 3050 Laptop GPU",
+      "4096 MiB",
+      "616.92"
+    ],
+    "models": [
+      "google/gemma-4-e4b",
+      "text-embedding-nomic-embed-text-v1.5",
+      "prism-ml/bonsai-27b",
+      "google/gemma-4-12b",
+      "gemma-3-270m-it"
+    ]
+  },
+  "totals": {
+    "requests": 100,
+    "ok": 100,
+    "failed": 0,
+    "wall_start": "2026-09-21T17:13:56.159393+00:00",
+    "wall_end": "2026-09-21T17:17:58.460634+00:00",
+    "wall_secs": 242.3,
+    "prompt_tokens": 2944,
+    "completion_tokens": 8651,
+    "total_tokens": 11595,
+    "aggregate_tokens_per_sec": 47.85,
+    "ok_by_model": {
+      "gemma-3-270m-it": 90,
+      "google/gemma-4-e4b": 10
+    }
+  },
+  "model_switches": [
+    {
+      "num": 1,
+      "from": [
+        "google/gemma-4-e4b"
+      ],
+      "to": "gemma-3-270m-it",
+      "load_time_seconds": 3.475,
+      "ready_wait_s": 0.0
+    },
+    {
+      "num": 91,
+      "from": [
+        "gemma-3-270m-it"
+      ],
+      "to": "google/gemma-4-e4b",
+      "load_time_seconds": 19.774,
+      "ready_wait_s": 0.0
+    }
+  ],
+  "latency_ms": {
+    "mean": 1378.1931518554688,
+    "median": 531.97119140625,
+    "p95": 6539.182373046875
+  },
+  "ttft_ms": {
+    "mean": 333.7346484375,
+    "median": 53.855224609375
+  },
+  "failures": [],
+  "queue_states_seen": {
+    "run_start": 1,
+    "queued": 100,
+    "model_switch": 2,
+    "sending": 100,
+    "done": 100,
+    "run_end": 1
+  }
+}

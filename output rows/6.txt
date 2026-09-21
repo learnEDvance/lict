@@ -1,0 +1,7 @@
+```json
+{
+  "id": "12345",
+  "name": "Alice Smith",
+  "tags": ["technology", "coding"]
+}
+```

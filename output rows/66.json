@@ -1,0 +1,93 @@
+{
+  "request_num": 66,
+  "request_files": [
+    "66.txt"
+  ],
+  "has_images": false,
+  "has_text": true,
+  "target_model": "gemma-3-270m-it",
+  "model_switch": {
+    "switched": false,
+    "target": "gemma-3-270m-it",
+    "load_time_seconds": 0,
+    "loaded_before": [
+      "gemma-3-270m-it"
+    ]
+  },
+  "payload": {
+    "model": "gemma-3-270m-it",
+    "stream": true,
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "reasoning_effort": null
+  },
+  "extra": {},
+  "attempts": 1,
+  "t_queued": "2026-09-21T17:15:37.921025+00:00",
+  "t_sent": "2026-09-21T17:15:38.705474+00:00",
+  "t_done": "2026-09-21T17:15:40.335031+00:00",
+  "ok": true,
+  "http_status": 200,
+  "reason": "OK",
+  "headers_ms": 7.5537109375,
+  "ttft_ms": 61.077880859375,
+  "total_ms": 1629.24951171875,
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 26,
+    "completion_tokens": 200,
+    "total_tokens": 226,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "server_ids": {
+    "id": "chatcmpl-lwopa7j3oerglepyep8nje",
+    "created": 1790010938,
+    "model": "gemma-3-270m-it",
+    "system_fingerprint": "gemma-3-270m-it"
+  },
+  "tokens_per_second_client": 127.54,
+  "resource_samples_during": {
+    "gpu": [
+      {
+        "ts_ms": 1790010939437.4036,
+        "nvgpu_ts": "2026/09/21 22:45:39.416",
+        "gpu_util_pct": 64.0,
+        "gpu_mem_util_pct": 47.0,
+        "power_w": 34.08,
+        "gpu_mem_mib": 1352.0,
+        "sm_mhz": 2047.0,
+        "mem_mhz": 6121.0
+      }
+    ],
+    "ps": [
+      {
+        "ts_ms": 1790010940089.531,
+        "model": "gemma-3-270m-it",
+        "status": "generating",
+        "queued": 0,
+        "parallel": 32,
+        "context_length": 32768
+      }
+    ],
+    "win": []
+  },
+  "resources": {
+    "gpu_util_max_pct": 64.0,
+    "gpu_util_avg_pct": 64.0,
+    "power_max_w": 34.08,
+    "power_avg_w": 34.08,
+    "gpu_mem_max_mib": 1352.0,
+    "ps_states": [
+      {
+        "status": "generating",
+        "queued": 0,
+        "parallel": 32
+      }
+    ],
+    "window_samples": 2
+  },
+  "output_txt": "66.txt",
+  "output_first80": "```nginx\nserver {\n    listen 127.0.0.1;\n    server_name localhost;\n\n    location"
+}

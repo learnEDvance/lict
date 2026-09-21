@@ -1,0 +1,13 @@
+```bash
+ps -ef | grep -i "process_name"
+```
+
+**Explanation:**
+
+*   `ps -ef`: This command lists all processes on the system, including their names.
+*   `grep -i "process_name"`:  This is the key part. The `-i` option tells `grep` to search for a pattern within the output of `ps -ef`.  The `grep` command will then print lines that match the pattern.  The `-i` option is crucial because it tells `grep` to *exclude* the process name from the results.
+
+**How it works:**
+
+1.  **`ps -ef`**: This command lists all processes on the system, including their names.
+2.  **`grep -i "process_name"`**: This command searches for lines containing the string "process_name" within the output of `ps -ef`.  The `-i` option tells `

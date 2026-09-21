@@ -1,0 +1,101 @@
+{
+  "request_num": 64,
+  "request_files": [
+    "64.txt"
+  ],
+  "has_images": false,
+  "has_text": true,
+  "target_model": "gemma-3-270m-it",
+  "model_switch": {
+    "switched": false,
+    "target": "gemma-3-270m-it",
+    "load_time_seconds": 0,
+    "loaded_before": [
+      "gemma-3-270m-it"
+    ]
+  },
+  "payload": {
+    "model": "gemma-3-270m-it",
+    "stream": true,
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "reasoning_effort": null
+  },
+  "extra": {},
+  "attempts": 1,
+  "t_queued": "2026-09-21T17:15:34.355476+00:00",
+  "t_sent": "2026-09-21T17:15:35.092808+00:00",
+  "t_done": "2026-09-21T17:15:36.733806+00:00",
+  "ok": true,
+  "http_status": 200,
+  "reason": "OK",
+  "headers_ms": 9.941650390625,
+  "ttft_ms": 52.264404296875,
+  "total_ms": 1640.757568359375,
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 20,
+    "completion_tokens": 200,
+    "total_tokens": 220,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "server_ids": {
+    "id": "chatcmpl-ehz1pe07frtdiquhjw3jlp",
+    "created": 1790010935,
+    "model": "gemma-3-270m-it",
+    "system_fingerprint": "gemma-3-270m-it"
+  },
+  "tokens_per_second_client": 125.91,
+  "resource_samples_during": {
+    "gpu": [
+      {
+        "ts_ms": 1790010935402.2788,
+        "nvgpu_ts": "2026/09/21 22:45:35.385",
+        "gpu_util_pct": 3.0,
+        "gpu_mem_util_pct": 0.0,
+        "power_w": 25.49,
+        "gpu_mem_mib": 1352.0,
+        "sm_mhz": 2047.0,
+        "mem_mhz": 6121.0
+      }
+    ],
+    "ps": [
+      {
+        "ts_ms": 1790010936071.636,
+        "model": "gemma-3-270m-it",
+        "status": "generating",
+        "queued": 0,
+        "parallel": 32,
+        "context_length": 32768
+      }
+    ],
+    "win": [
+      {
+        "ts_ms": 1790010936286.7556,
+        "llama_cpu_pct": null,
+        "llama_ws_mb": null,
+        "total_cpu_pct": null,
+        "avail_kb": null
+      }
+    ]
+  },
+  "resources": {
+    "gpu_util_max_pct": 3.0,
+    "gpu_util_avg_pct": 3.0,
+    "power_max_w": 25.49,
+    "power_avg_w": 25.49,
+    "gpu_mem_max_mib": 1352.0,
+    "ps_states": [
+      {
+        "status": "generating",
+        "queued": 0,
+        "parallel": 32
+      }
+    ],
+    "window_samples": 3
+  },
+  "output_txt": "64.txt",
+  "output_first80": "```python\ndef count_vowels(input_string):\n    \"\"\"\n    Counts the number of vowel"
+}

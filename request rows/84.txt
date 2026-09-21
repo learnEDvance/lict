@@ -1,0 +1,1 @@
+Write a SQL query to delete all rows older than a date.

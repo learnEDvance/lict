@@ -1,0 +1,22 @@
+```python
+def reverse_string(input_string):
+    """Reverses a given string.
+
+    Args:
+        input_string: The string to be reversed.
+
+    Returns:
+        The reversed string.
+    """
+    return input_string[::-1]  # Uses slicing to reverse the string
+```
+
+**Explanation:**
+
+1. **`def reverse_string(input_string):`**: This defines a function named `reverse_string` that takes one argument: the string `input_string`.
+
+2. **`"""Reverses a given string."""`**:  This is a docstring, providing a brief description of what the function does. It's good practice to include docstrings for clarity and maintainability.
+
+3. **`return input_string[::-1]`:** This line uses slicing to reverse the string.
+   - `[::-1]` creates a reversed copy of the string.
+   - `[::-

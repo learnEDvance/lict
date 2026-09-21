@@ -1,0 +1,85 @@
+{
+  "request_num": 83,
+  "request_files": [
+    "83.txt"
+  ],
+  "has_images": false,
+  "has_text": true,
+  "target_model": "gemma-3-270m-it",
+  "model_switch": {
+    "switched": false,
+    "target": "gemma-3-270m-it",
+    "load_time_seconds": 0,
+    "loaded_before": [
+      "gemma-3-270m-it"
+    ]
+  },
+  "payload": {
+    "model": "gemma-3-270m-it",
+    "stream": true,
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "reasoning_effort": null
+  },
+  "extra": {},
+  "attempts": 1,
+  "t_queued": "2026-09-21T17:16:07.845446+00:00",
+  "t_sent": "2026-09-21T17:16:08.583162+00:00",
+  "t_done": "2026-09-21T17:16:09.916329+00:00",
+  "ok": true,
+  "http_status": 200,
+  "reason": "OK",
+  "headers_ms": 7.0771484375,
+  "ttft_ms": 52.261962890625,
+  "total_ms": 1332.861328125,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 19,
+    "completion_tokens": 165,
+    "total_tokens": 184,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "server_ids": {
+    "id": "chatcmpl-tqbf0phtwvryz3hn3i4e2",
+    "created": 1790010968,
+    "model": "gemma-3-270m-it",
+    "system_fingerprint": "gemma-3-270m-it"
+  },
+  "tokens_per_second_client": 128.85,
+  "resource_samples_during": {
+    "gpu": [
+      {
+        "ts_ms": 1790010969406.902,
+        "nvgpu_ts": "2026/09/21 22:46:09.391",
+        "gpu_util_pct": 60.0,
+        "gpu_mem_util_pct": 46.0,
+        "power_w": 38.04,
+        "gpu_mem_mib": 1352.0,
+        "sm_mhz": 2047.0,
+        "mem_mhz": 6121.0
+      }
+    ],
+    "ps": [],
+    "win": [
+      {
+        "ts_ms": 1790010969871.1868,
+        "llama_cpu_pct": null,
+        "llama_ws_mb": null,
+        "total_cpu_pct": null,
+        "avail_kb": null
+      }
+    ]
+  },
+  "resources": {
+    "gpu_util_max_pct": 60.0,
+    "gpu_util_avg_pct": 60.0,
+    "power_max_w": 38.04,
+    "power_avg_w": 38.04,
+    "gpu_mem_max_mib": 1352.0,
+    "window_samples": 2
+  },
+  "output_txt": "83.txt",
+  "output_first80": "Here are three examples of pull-ups:\n\n1.  **The Barbell Pull-Up:** This is a cla"
+}

@@ -1,0 +1,30 @@
+```bash
+#!/usr/bin/env
+
+# Function to tar a directory
+tar_directory_tars() {
+  local dir="$1"
+  local tar_filename="$2"
+
+  if [ -f "$dir" ]; then
+    tar_filename=$(basename "$dir$1" .tar.gz)
+    echo "Tarsed directory: $dir"
+  else
+    echo "Directory '$dir' not found."
+  fi
+}
+
+# Function to tar a directory recursively
+tar_directory_tars_recursive() {
+  local dir="$1"
+  local tar_filename="$2"
+
+  if [ -f "$dir" ]; then
+    tar_filename=$(basename "$dir$1" .tar.gz)
+    echo "Tarsed directory: $dir"
+  else
+    echo "Directory '$dir' not found."
+  fi
+}
+
+# Function to tar a

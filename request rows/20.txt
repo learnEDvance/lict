@@ -1,0 +1,1 @@
+Write a python snippet that downloads a URL with requests.
